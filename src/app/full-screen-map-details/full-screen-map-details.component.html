@@ -1,0 +1,70 @@
+<div class="section" (click)="showNotificationTwo($event)">
+  <div class="wrapper">
+    <div class="hero__section">
+      <div class="left">
+        <div class="toggleSideBar" (click)="toggleSideBar()">
+          <i
+            id="i"
+            [ngClass]="
+              isOpen ? 'ri-dashboard-horizontal-fill' : 'ri-more-2-fill'
+            "
+          ></i>
+        </div>
+        <div>
+          <span class="h4">Full Screen Maps</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="search__wrapper">
+          <div class="input-container">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div>
+            <i id="i" class="ri-search-line"></i>
+          </div>
+        </div>
+        <div>
+          <i id="except" class="ri-dashboard-fill"></i>
+        </div>
+        <div class="notification-wrapper" (click)="showNotification($event)">
+          <i id="except" class="ri-notification-3-fill"></i>
+          <span class="notification-count">5</span>
+        </div>
+        <div class="notification__details" *ngIf="notification">
+          <p class="notification__item">Mike John responded to your email</p>
+          <p class="notification__item">You have 5 new tasks</p>
+          <p class="notification__item">You're now friend with Andrew</p>
+          <p class="notification__item">Another Notification</p>
+          <p class="notification__item">Another One</p>
+        </div>
+        <div>
+          <i id="except" class="ri-user-3-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <iframe
+      class="iframe__two my-2"
+      width="100%"
+      height="510px"
+      frameborder="0"
+      style="border: 0"
+      [src]="mapUrl"
+      allowfullscreen
+    >
+    </iframe>
+  </div>
+  <div class="row footer">
+    <div class="col-sm-6 contact__wrapper">
+      <a id="contact__link" href="">CREATIVE TIM</a>
+      <a id="contact__link" href="">ABOUT US</a>
+      <a id="contact__link" href="">BLOG</a>
+      <a id="contact__link" href="">LICENSE</a>
+    </div>
+    <span class="col span">
+      © 2025, made with<i class="icon22 ri-heart-line"></i>by Creative Tim for a
+      better web.
+    </span>
+  </div>
+</div>

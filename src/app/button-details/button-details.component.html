@@ -1,0 +1,370 @@
+<div class="section" (click)="settingsToggle($event)" (click)="showNotificationTwo($event)">
+  <div class="wrapper">
+    <div class="hero__section">
+      <div class="left">
+        <div (click)="toggleSideBar()">
+          <i
+            id="i"
+            [ngClass]="
+              isOpen ? 'ri-dashboard-horizontal-fill' : 'ri-more-2-fill'
+            "
+          ></i>
+        </div>
+        <div>
+          <span class="h4">Buttons</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="search__wrapper">
+          <div class="input-container">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div>
+            <i id="i" class="ri-search-line"></i>
+          </div>
+        </div>
+        <div>
+          <i id="except" class="ri-dashboard-fill"></i>
+        </div>
+        <div class="notification-wrapper" (click)="showNotification($event)">
+          <i id="except" class="ri-notification-3-fill"></i>
+          <span class="notification-count">5</span>
+        </div>
+
+        <div class="notification__details" *ngIf="notification">
+          <p class="notification__item">Mike John responded to your email</p>
+          <p class="notification__item">You have 5 new tasks</p>
+          <p class="notification__item">You're now friend with Andrew</p>
+          <p class="notification__item">Another Notification</p>
+          <p class="notification__item">Another One</p>
+        </div>
+        <div>
+          <i id="except" class="ri-user-3-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section__details">
+    <div class="row__one">
+      <div class="color">
+        <h4>Pick your color</h4>
+        <div class="d-md-flex">
+          <h4 class="col-md-4 flex-md-fill bg-secondary text-white">Default</h4>
+          <h4 class="col-md-4 flex-md-fill bg-primary text-white">Primary</h4>
+          <h4 class="col-md-4 flex-md-fill bg-info text-white">Info</h4>
+        </div>
+        <div class="d-md-flex">
+          <h4 class="col-md-4 flex-md-fill bg-success text-white">Success</h4>
+          <h4 class="col-md-4 flex-md-fill bg-warning text-white">Warning</h4>
+          <h4 class="col-md-4 flex-md-fill bg-danger text-white">Danger</h4>
+        </div>
+      </div>
+      <div class="label">
+        <h4>Buttons with Label</h4>
+        <div class="d-md-flex">
+          <h4 class="col-md-4 flex-md-fill bg-secondary text-white">
+            <span class="material-symbols-outlined"> chevron_left </span>
+            Left
+          </h4>
+          <h4 class="col-md-4 flex-md-fill bg-primary text-white">
+            <span class="material-symbols-outlined"> chevron_right </span>
+            Right
+          </h4>
+          <h4 class="col-md-4 flex-md-fill bg-info text-white">
+            <span class="material-symbols-outlined"> exclamation </span>
+            Info
+          </h4>
+        </div>
+        <div class="d-md-flex">
+          <h4 class="col-md-4 flex-md-fill bg-success text-white">
+            <span class="material-symbols-outlined"> check </span>
+            Success
+          </h4>
+          <h4 class="col-md-4 flex-md-fill bg-warning text-white">
+            <span class="material-symbols-outlined"> warning </span>
+            Warning
+          </h4>
+          <h4 class="col-md-4 flex-md-fill bg-danger text-white">
+            <span class="material-symbols-outlined"> close </span>
+            Danger
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="row row__one">
+      <div class="color">
+        <h4>Pick your Size</h4>
+        <div class="d-md-flex size__wrapper">
+          <h4 class="col-md-4 flex-md-fill bgSmall text-white">Small</h4>
+          <h4 class="col-md-4 flex-md-fill bgRegular text-white">Regular</h4>
+          <h4 class="col-md-4 flex-md-fill bgLarge text-white">Large</h4>
+        </div>
+      </div>
+      <div class="row label">
+        <h4>Pick your Style</h4>
+        <div class="col-sm-4 d-md-flex">
+          <div>
+            <h4 class="col-sm-4 d-md-flex default text-white">Default</h4>
+            <h4 class="col-sm-4 d-md-flex round text-white m-2">Round</h4>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h4 class="col-sm-4 d-md-flex with__icon text-white m-2">
+            <i class="ri-heart-fill"></i>
+            With Icon
+          </h4>
+          <h4 class="love">
+            <i class="ri-heart-fill"></i>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="row row__one">
+      <div class="color">
+        <h4>Pagination</h4>
+        <nav>
+          <ul class="pagination">
+            <li
+              *ngFor="let page of pages; let i = index"
+              [ngClass]="{ active: currentPage === i }"
+            >
+              <a
+                class="page-link"
+                routerLink="components/button"
+                (click)="onPageClick(i)"
+                >{{ page }}</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <nav>
+          <ul class="pagination">
+            <ul class="pagination">
+              <li class="page-item">
+                <span class="material-symbols-outlined">
+                  keyboard_double_arrow_left
+                </span>
+              </li>
+              <li
+                *ngFor="let pages of pagesTwo; let i = index"
+                [ngClass]="{ active: currentPageTwo === i }"
+              >
+                <a
+                  class="page-link"
+                  routerLink="components/button"
+                  (click)="onPageClickTwo(i)"
+                  >{{ pages }}</a
+                >
+              </li>
+              <li class="page-item">
+                <span class="material-symbols-outlined">
+                  keyboard_double_arrow_right
+                </span>
+              </li>
+            </ul>
+          </ul>
+        </nav>
+      </div>
+      <div class="label container">
+        <h4>Button Group</h4>
+        <div class="row">
+          <div class="col-sm text">Left</div>
+          <div class="col-sm text">Middle</div>
+          <div class="col-sm text">Right</div>
+        </div>
+        <div class="row m-2 rounded">
+          <div class="col-sm textTwo">1</div>
+          <div class="col-sm textTwo">2</div>
+          <div class="col-sm textTwo">3</div>
+          <div class="col-sm textTwo">4</div>
+        </div>
+      </div>
+    </div>
+    <h4>Social Buttons</h4>
+    <div class="social__details">
+      <div class="row__three">
+        <div class="titile__text">
+          <h4>Default</h4>
+          <h4>Neutral</h4>
+        </div>
+        <div class="social__wrapper">
+          <div class="icon__wrapper">
+            <i id="icon__one" class="ri-twitter-fill"></i>
+            <p>CONNECT WITH US</p>
+          </div>
+          <div class="fb__wrapper__two">
+            <i id="twitter__two" class="ri-twitter-fill"></i>
+            <i id="twitter__three" class="ri-twitter-fill"></i>
+            <i id="twitter__four" class="ri-twitter-fill"></i>
+          </div>
+          <div class="icon__wrapper__three">
+            <i id="icon__two" class="ri-twitter-fill"></i>
+            <p>CONNECT WITH US</p>
+          </div>
+        </div>
+        <div class="social__wrapper my-3">
+          <div class="fb__wrapper">
+            <i id="fb__one" class="ri-facebook-box-fill"></i>
+            <p>SHARE - 2.2k</p>
+          </div>
+          <div class="fb__wrapper__two">
+            <i id="fb__two" class="ri-facebook-box-fill"></i>
+            <i id="fb__three" class="ri-facebook-box-fill"></i>
+            <i id="fb__four" class="ri-facebook-box-fill"></i>
+          </div>
+          <div class="fb__wrapper__three">
+            <i id="fb__four" class="ri-facebook-box-fill"></i>
+            <p>SHARE - 2.2k</p>
+          </div>
+        </div>
+        <div class="social__wrapper my-3">
+          <div class="goggle__wrapper">
+            <i class="fab fa-google mx-1" aria-hidden="true"></i>
+            <p>SHARE ON GOOGLE +</p>
+          </div>
+          <div class="fb__wrapper__two">
+            <i id="g__two" class="fab fa-google" aria-hidden="true"></i>
+            <i id="g__three" class="fab fa-google" aria-hidden="true"></i>
+            <i id="g__four" class="fab fa-google" aria-hidden="true"></i>
+          </div>
+          <div class="fb__wrapper__three">
+            <i id="g__four" class="fab fa-google" aria-hidden="true"></i>
+            <p class="text-danger">SHARE ON GOOGLE +</p>
+          </div>
+        </div>
+        <div class="social__wrapper my-3">
+          <div class="linkedin__wrapper">
+            <i id="" class="ri-linkedin-box-fill"></i>
+            <p>CONNECT WITH LINKEDIN</p>
+          </div>
+          <div class="linked__wrapper__two">
+            <i id="linked__two" class="ri-linkedin-box-fill"></i>
+            <i id="linked__three" class="ri-linkedin-box-fill"></i>
+            <i id="linked__four" class="ri-linkedin-box-fill"></i>
+          </div>
+          <div class="fb__wrapper__three">
+            <i id="linked__four" class="ri-linkedin-box-fill"></i>
+            <p>CONNECT WITH LINKEDIN</p>
+          </div>
+        </div>
+        <div class="social__wrapper my-3">
+          <div class="pint__wrapper">
+            <i class="ri-pinterest-fill"></i>
+            <p>PINIT IT - 212</p>
+          </div>
+          <div class="fb__wrapper__two">
+            <i id="pint__two" class="ri-pinterest-fill"></i>
+            <i id="pint__three" class="ri-pinterest-fill"></i>
+            <i id="pint__four" class="ri-pinterest-fill"></i>
+          </div>
+          <div class="fb__wrapper__three">
+            <i id="pint__four" class="ri-linkedin-box-fill"></i>
+            <p class="text-danger">PINIT IT - 212</p>
+          </div>
+        </div>
+        <div class="social__wrapper my-3">
+          <div class="pint__wrapper">
+            <i class="ri-youtube-fill"></i>
+            <p>VIEW ON YOUTUBE</p>
+          </div>
+          <div class="fb__wrapper__two">
+            <i id="pint__two" class="ri-youtube-fill"></i>
+            <i id="pint__three" class="ri-youtube-fill"></i>
+            <i id="pint__four" class="ri-youtube-fill"></i>
+          </div>
+          <div class="fb__wrapper__three">
+            <i id="pint__four" class="ri-youtube-fill"></i>
+            <p class="text-danger">VIEW ON YOUTUBE</p>
+          </div>
+        </div>
+        <div class="social__wrapper my-3">
+          <div class="fb__wrapper">
+            <i class="ri-twitter-line"></i>
+            <p>REPOST</p>
+          </div>
+          <div class="fb__wrapper__two">
+            <i id="fb__two" class="ri-twitter-fill"></i>
+            <i id="fb__three" class="ri-twitter-fill"></i>
+            <i id="fb__four" class="ri-twitter-fill"></i>
+          </div>
+          <div class="fb__wrapper__three">
+            <i id="fb__four" class="ri-twitter-fill"></i>
+            <p>REPOST</p>
+          </div>
+        </div>
+        <div class="social__wrapper my-3">
+          <div class="fb__wrapper bg-dark">
+            <i class="ri-github-fill"></i>
+            <p>CONNECT WITH GITHUB</p>
+          </div>
+          <div class="fb__wrapper__two">
+            <i id="fb__two" class="ri-github-fill bg-dark"></i>
+            <i id="fb__three" class="ri-github-fill bg-dark"></i>
+            <i id="git__four" class="ri-github-fill"></i>
+          </div>
+          <div class="fb__wrapper__three">
+            <i id="git__four" class="ri-github-fill"></i>
+            <p class="text-dark">CONNECT WITH GITHUB</p>
+          </div>
+        </div>
+        <div class="social__wrapper my-3">
+          <div class="fb__wrapper bg-primary">
+            <i class="ri-behance-fill"></i>
+            <p>FOLLOW US</p>
+          </div>
+          <div class="fb__wrapper__two">
+            <i id="fb__two" class="ri-behance-fill bg-primary"></i>
+            <i id="fb__three" class="ri-behance-fill bg-primary"></i>
+            <i id="be__four" class="ri-behance-fill"></i>
+          </div>
+          <div class="fb__wrapper__three">
+            <i id="be__four" class="ri-behance-fill"></i>
+            <p>FOLLOW US</p>
+          </div>
+        </div>
+        <div class="social__wrapper my-3">
+          <div class="fb__wrapper bg-primary">
+            <i class="ri-dribbble-line"></i>
+            <p>FIND US ON DRIBBLE</p>
+          </div>
+          <div class="fb__wrapper__two">
+            <i id="fb__two" class="ri-dribbble-fill bg-primary"></i>
+            <i id="fb__three" class="ri-dribbble-fill bg-primary"></i>
+            <i id="be__four" class="ri-dribbble-fill"></i>
+          </div>
+          <div class="fb__wrapper__three">
+            <i id="be__four" class="ri-dribbble-fill"></i>
+            <p>FIND US ON DRIBBLE</p>
+          </div>
+        </div>
+        <div class="social__wrapper my-3">
+          <div class="fb__wrapper bg-primary">
+            <i class="ri-signpost-fill"></i>
+            <p>REPOST - 232</p>
+          </div>
+          <div class="fb__wrapper__two">
+            <i id="fb__two" class="ri-signpost-fill bg-primary"></i>
+            <i id="fb__three" class="ri-signpost-fill bg-primary"></i>
+            <i id="be__four" class="ri-signpost-fill"></i>
+          </div>
+          <div class="fb__wrapper__three">
+            <i id="be__four" class="ri-signpost-fill"></i>
+            <p>REPOST - 232</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row footer">
+    <div class="col-sm-6 contact__wrapper">
+      <a id="contact__link" href="">CREATIVE TIM</a>
+      <a id="contact__link" href="">ABOUT US</a>
+      <a id="contact__link" href="">BLOG</a>
+      <a id="contact__link" href="">LICENSE</a>
+    </div>
+    <span class="col span">
+      © 2025, made with<i class="icon22 ri-heart-line"></i>by Creative Tim for a
+      better web.
+    </span>
+  </div>
+</div>

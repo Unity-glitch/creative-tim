@@ -1,0 +1,429 @@
+<div class="section" (click)="showNotificationTwo($event)">
+  <div class="wrapper">
+    <div class="hero__section">
+      <div class="left">
+        <div class="toggleSideBar" (click)="toggleSideBar()">
+          <i
+            id="i"
+            [ngClass]="
+              isOpen ? 'ri-dashboard-horizontal-fill' : 'ri-more-2-fill'
+            "
+          ></i>
+        </div>
+        <div>
+          <span class="h4">Panels</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="search__wrapper">
+          <div class="input-container">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div>
+            <i id="i" class="ri-search-line"></i>
+          </div>
+        </div>
+        <div>
+          <i id="except" class="ri-dashboard-fill"></i>
+        </div>
+        <div class="notification-wrapper" (click)="showNotification($event)">
+          <i id="except" class="ri-notification-3-fill"></i>
+          <span class="notification-count">5</span>
+        </div>
+        <div class="notification__details" *ngIf="notification">
+          <p class="notification__item">Mike John responded to your email</p>
+          <p class="notification__item">You have 5 new tasks</p>
+          <p class="notification__item">You're now friend with Andrew</p>
+          <p class="notification__item">Another Notification</p>
+          <p class="notification__item">Another One</p>
+        </div>
+        <div>
+          <i id="except" class="ri-user-3-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab__wrapper row">
+    <div class="col-sm-12 section__one rounded mx-2 my-3">
+      <div class="tabs">
+        <p class="text-dark px-0 py-0">
+          Navigation Pillsspan <span>- Horizontal Tabs</span>
+        </p>
+        <div class="tab-header my-3">
+          <button
+            [class]="
+              activeTabId === 'profile'
+                ? 'tab-button bg-info text-white active'
+                : 'tab-button bg-white text-info'
+            "
+            (click)="viewTab('profile')"
+          >
+            PROFILE
+          </button>
+          <button
+            [class]="
+              activeTabId === 'settings'
+                ? 'tab-button bg-primary text-white active'
+                : 'tab-button bg-white text-primary'
+            "
+            (click)="viewTab('settings')"
+          >
+            SETTINGS
+          </button>
+          <button
+            [class]="
+              activeTabId === 'options'
+                ? 'tab-button bg-success text-white active'
+                : 'tab-button bg-white text-success'
+            "
+            (click)="viewTab('options')"
+          >
+            OPTIONS
+          </button>
+        </div>
+        <div class="tab-content">
+          <div [class.active]="activeTabId === 'profile'" class="tab-pane">
+            <p>
+              Collaboratively administrate empowered markets via plug-and-play
+              networks. Dynamically procrastinate B2C users after installed base
+              benefits.
+            </p>
+            <p class="py-3">
+              Dramatically visualize customer directed convergence without
+              revolutionary ROI. Collaboratively administrate empowered markets
+              via plug-and-play networks. Dynamically procrastinate B2C users
+              after installed base benefits.
+            </p>
+            <p>This is very nice.</p>
+          </div>
+          <div [class.active]="activeTabId === 'settings'" class="tab-pane">
+            <p class="py-2">
+              Efficiently unleash cross-media information without cross-media
+              value. Quickly maximize timely deliverables for real-time schemas.
+            </p>
+            <p>
+              Dramatically maintain clicks-and-mortar solutions without
+              functional solutions.
+            </p>
+          </div>
+          <div [class.active]="activeTabId === 'options'" class="tab-pane">
+            <p class="py-3">
+              Completely synergize resource taxing relationships via premier
+              niche markets. Professionally cultivate one-to-one customer
+              service with robust ideas.
+            </p>
+            <p>
+              Dynamically innovate resource-leveling customer service for state
+              of the art customer service.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 section__two rounded my-3">
+      <p class="text-dark px-3 py-4">
+        Navigation Pillsspan <span>-Vertical Tabs</span>
+      </p>
+      <div class="tabsTwoTwo">
+        <div class="tab-header-Two">
+          <button
+            [class]="
+              activeTabIdTwo === 'Profile'
+                ? 'tab-button bg-info text-white active'
+                : 'tab-button bg-white text-info'
+            "
+            (click)="viewTabTwo('Profile')"
+          >
+            PROFILE
+          </button>
+          <button
+            [class]="
+              activeTabIdTwo === 'Settings'
+                ? 'tab-button bg-primary text-white active'
+                : 'tab-button bg-white text-primary'
+            "
+            (click)="viewTabTwo('Settings')"
+          >
+            SETTINGS
+          </button>
+          <button
+            [class]="
+              activeTabIdTwo === 'Options'
+                ? 'tab-button bg-success text-white active'
+                : 'tab-button bg-white text-success'
+            "
+            (click)="viewTabTwo('Options')"
+          >
+            OPTIONS
+          </button>
+        </div>
+        <div class="tab-content">
+          <div [class.active]="activeTabIdTwo === 'Profile'" class="tab-pane">
+            <p>
+              Collaboratively administrate empowered markets via plug-and-play
+              networks. Dynamically procrastinate B2C users after installed base
+              benefits.
+            </p>
+            <p class="py-3">
+              Dramatically visualize customer directed convergence without
+              revolutionary ROI. Collaboratively administrate empowered markets
+              via plug-and-play networks. Dynamically procrastinate B2C users
+              after installed base benefits.
+            </p>
+            <p>This is very nice.</p>
+          </div>
+          <div [class.active]="activeTabIdTwo === 'Settings'" class="tab-pane">
+            <p class="py-2">
+              Efficiently unleash cross-media information without cross-media
+              value. Quickly maximize timely deliverables for real-time schemas.
+            </p>
+            <p>
+              Dramatically maintain clicks-and-mortar solutions without
+              functional solutions.
+            </p>
+          </div>
+          <div [class.active]="activeTabIdTwo === 'Options'" class="tab-pane">
+            <p class="py-3">
+              Completely synergize resource taxing relationships via premier
+              niche markets. Professionally cultivate one-to-one customer
+              service with robust ideas.
+            </p>
+            <p>
+              Dynamically innovate resource-leveling customer service for state
+              of the art customer service.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row accordion__wrapper">
+    <div class="col-lg-6 col-sm-12 col-md-6 left my-1">
+      <div class="accordion">
+        <div *ngFor="let item of accordionItems" class="accordion__item">
+          <div (click)="showAccordion(item)" class="accordion__header text-danger">
+              {{item.title}}
+              <i *ngIf="item.isOpen" class="ri-arrow-up-s-line"></i>
+              <i *ngIf="!item.isOpen" class="ri-arrow-down-s-line"></i>
+          </div>
+          <div class="border__line"></div>
+          <p *ngIf="item.isOpen" class="accordion__content">
+            {{item.content}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="right__wrapper" class="col-lg-6 col-sm-12 col-md-6 my-1">
+      <div class="section__two rounded my-3">
+        <p class="text-dark px-3 py-4">
+          Navigation Pillsspan <span>-Vertical Tabs</span>
+        </p>
+        <div class="mx-3">
+          <div class="col-sm-12 tab-header-two">
+            <div>
+              <button
+              id="btn__one"
+              [class]="
+                activeTabIdThree === 'show-profile'
+                  ? 'tab-button bg-info text-white active'
+                  : 'tab-button bg-white text-info'
+              "
+              (click)="viewTabThree('show-profile')"
+            >
+              <i id="dashboard__id" class="ri-dashboard-horizontal-fill"></i>
+              HOME
+            </button>
+            <button
+              id="btn__one"
+              [class]="
+                activeTabIdThree === 'show-settings'
+                  ? 'tab-button bg-danger text-white active'
+                  : 'tab-button bg-white text-danger'
+              "
+              (click)="viewTabThree('show-settings')"
+            >
+              <i id="dashboard__id" class="ri-settings-4-fill"></i>
+              SETTINGS
+            </button>
+            </div>
+            <div class="col-sm-12 tab-content mx-3">
+            <div
+              [class.active]="activeTabIdThree === 'show-profile'"
+              class="tab-pane"
+            >
+              <p>
+                Collaboratively administrate empowered markets via plug-and-play
+                networks. Dynamically procrastinate B2C users after installed
+                base benefits.
+              </p>
+              <p class="py-3">
+                Dramatically visualize customer directed convergence without
+                revolutionary ROI. Collaboratively administrate empowered
+                markets via plug-and-play networks. Dynamically procrastinate
+                B2C users after installed base benefits.
+              </p>
+              <p>
+                Dramatically visualize customer directed convergence without
+                revolutionary ROI. Collaboratively administrate empowered
+                markets via plug-and-play networks. Dynamically procrastinate
+                B2C users after installed base benefits.
+              </p>
+            </div>
+            <div
+              [class.active]="activeTabIdThree === 'show-settings'"
+              class="tab-pane"
+            >
+              <p class="py-2">
+                Efficiently unleash cross-media information without cross-media
+                value. Quickly maximize timely deliverables for real-time
+                schemas
+              </p>
+              <p>
+                Dramatically maintain clicks-and-mortar solutions without
+                functional solutions.
+              </p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page__wrapper">
+    <h4 class="text-center fs-3">Page Subcategories</h4>
+    <div class="section__four rounded mx-2 my-3">
+      <div class="tabs">
+        <div class="row tab-header my-3">
+          <button
+            class="col-sm-6"
+            id="btn__one__one"
+            [class]="
+              activeTabIdFour === 'description'
+                ? 'tab-button bg-info text-white active'
+                : 'tab-button text-info'
+            "
+            (click)="viewTabFour('description')"
+          >
+            <i id="dashboard__id" class="ri-information-2-fill"></i>
+            DESCRIPTION
+          </button>
+          <button
+            class="col-sm-3"
+            id="btn__one__one"
+            [class]="
+              activeTabIdFour === 'location'
+                ? 'tab-button bg-dark text-white active'
+                : 'tab-button text-dark'
+            "
+            (click)="viewTabFour('location')"
+          >
+            <i id="dashboard__id" class="ri-map-pin-fill"></i>
+            LOCATION
+          </button>
+          <button
+            class="col-sm-3"
+            id="btn__one__two"
+            [class]="
+              activeTabIdFour === 'legal-info'
+                ? 'tab-button bg-primary text-white active'
+                : 'tab-button  text-primary'
+            "
+            (click)="viewTabFour('legal-info')"
+          >
+            <i id="dashboard__id" class="ri-auction-fill"></i>
+            LEGAL INFO
+          </button>
+          <button
+            class="col-sm-6"
+            id="btn__one__two"
+            [class]="
+              activeTabIdFour === 'help-center'
+                ? 'tab-button bg-success text-white active'
+                : 'tab-button  text-success'
+            "
+            (click)="viewTabFour('help-center')"
+          >
+            <i id="dashboard__id" class="ri-question-fill"></i>
+            HELP CENTER
+          </button>
+        </div>
+        <div class="tab-content-three rounded">
+          <div
+            [class.active]="activeTabIdFour === 'description'"
+            class="tab-pane"
+          >
+            <p>Description about product</p>
+            <p>More information here</p>
+            <p class="py-3">
+              Collaboratively administrate empowered markets via plug-and-play
+              networks. Dynamically procrastinate B2C users after installed base
+              benefits.
+            </p>
+            <p>
+              Dramatically visualize customer directed convergence without
+              revolutionary ROI.
+            </p>
+          </div>
+          <div [class.active]="activeTabIdFour === 'location'" class="tab-pane">
+            <p class="py-2">Location of the product</p>
+            <p class="">More information here</p>
+            <p class="py-3">
+              Efficiently unleash cross-media information without cross-media
+              value. Quickly maximize timely deliverables for real-time schemas.
+            </p>
+            <p>
+              Dramatically maintain clicks-and-mortar solutions without
+              functional solutions.
+            </p>
+          </div>
+          <div
+            [class.active]="activeTabIdFour === 'legal-info'"
+            class="tab-pane"
+          >
+            <p class="py-3">Legal info of the product</p>
+            <p>More information here</p>
+            <p>
+              Completely synergize resource taxing relationships via premier
+              niche markets. Professionally cultivate one-to-one customer
+              service with robust ideas.
+            </p>
+            <p>
+              Dynamically innovate resource-leveling customer service for state
+              of the art customer service.
+            </p>
+          </div>
+          <div
+            [class.active]="activeTabIdFour === 'help-center'"
+            class="tab-pane"
+          >
+            <p class="py-3">Legal info of the product</p>
+            <p>More information here</p>
+            <p>
+              Completely synergize resource taxing relationships via premier
+              niche markets. Professionally cultivate one-to-one customer
+              service with robust ideas.
+            </p>
+            <p>
+              Dynamically innovate resource-leveling customer service for state
+              of the art customer service.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row footer">
+    <div class="col-sm-6 contact__wrapper">
+      <a id="contact__link" href="">CREATIVE TIM</a>
+      <a id="contact__link" href="">ABOUT US</a>
+      <a id="contact__link" href="">BLOG</a>
+      <a id="contact__link" href="">LICENSE</a>
+    </div>
+    <span class="col span">
+      © 2025, made with<i class="icon22 ri-heart-line"></i>by Creative Tim for a
+      better web.
+    </span>
+  </div>
+</div>

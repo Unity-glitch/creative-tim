@@ -1,0 +1,354 @@
+<div class="section" (click)="showNotificationTwo($event)">
+  <div class="wrapper">
+    <div class="hero__section">
+      <div class="left">
+        <div class="toggleSideBar" (click)="toggleSideBar()">
+          <i
+            class="toggleSideBar"
+            id="i"
+            [ngClass]="
+              isOpen ? 'ri-dashboard-horizontal-fill' : 'ri-more-2-fill'
+            "
+          ></i>
+        </div>
+        <div>
+          <span class="h4">Regular Forms</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="search__wrapper">
+          <div class="input-container">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div>
+            <i id="i" class="ri-search-line"></i>
+          </div>
+        </div>
+        <div>
+          <i id="except" class="ri-dashboard-fill"></i>
+        </div>
+        <div class="notification-wrapper" (click)="showNotification($event)">
+          <i id="except" class="ri-notification-3-fill"></i>
+          <span class="notification-count">5</span>
+        </div>
+        <div class="notification__details" *ngIf="notification">
+          <p class="notification__item">Mike John responded to your email</p>
+          <p class="notification__item">You have 5 new tasks</p>
+          <p class="notification__item">You're now friend with Andrew</p>
+          <p class="notification__item">Another Notification</p>
+          <p class="notification__item">Another One</p>
+        </div>
+        <div>
+          <i id="except" class="ri-user-3-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row section__one__wrapper my-2">
+    <div class="section__one__left rounded my-4">
+      <div class="section__top">
+        <i class="form__icons ri ri-inbox-fill bg-danger rounded"></i>
+        <h4 class="px-4">Stacked Form</h4>
+      </div>
+      <div class="input__field">
+        <div class="input-container-two">
+          <div class="input-container">
+            <input type="email" id="email" placeholder=" " required />
+            <label for="email">Email</label>
+            <div class="underline"></div>
+          </div>
+        </div>
+        <div class="input-container-two">
+          <div class="input-container">
+            <input type="password" id="email" placeholder=" " required />
+            <label for="passowrd">Password</label>
+            <div class="underline"></div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center">
+        <input type="checkbox" id="styled-checkbox" />
+        <p class="px-2">Subscribe to Newsletter</p>
+      </div>
+      <button type="submit" class="input__button bg-danger text-white rounded">
+        SUBMIT
+      </button>
+    </div>
+    <div class="section__one__left rounded my-4">
+      <div class="section__top">
+        <i class="form__icons ri ri-inbox-fill bg-danger rounded"></i>
+        <h4 class="px-4">Horizontal Form</h4>
+      </div>
+      <div class="input__field">
+        <div class="input-container-two my-3">
+          <p class="">Email</p>
+          <input class="width__input__email" type="email" id="email" required />
+          <div class="underline my-3"></div>
+        </div>
+        <div class="input-container-two">
+          <p>Password</p>
+          <input
+            class="width__input__password"
+            id="email"
+            type="password"
+            required
+          />
+          <div class="underline"></div>
+        </div>
+        <div id="check__box__two" class="d-flex align-items-center my-4">
+          <input type="checkbox" id="styled-checkbox" />
+          <p class="px-2">Remember Me</p>
+        </div>
+      </div>
+      <button type="submit" class="input__button bg-danger text-white rounded">
+        SIGN IN
+      </button>
+    </div>
+  </div>
+  <div class="section__two__wrapper rounded">
+    <div class="section__top">
+      <p class="form__title form__icons__two bg-danger rounded text-white">
+        Form Elements
+      </p>
+    </div>
+    <div class="form__wrapper">
+      <div class="input-container-two">
+        <p>With help</p>
+        <input
+          class="width__input__password"
+          id="text__input"
+          type="text"
+          required
+        />
+        <div class="underline"></div>
+      </div>
+      <div class="input-container-two">
+        <p>Password</p>
+        <input
+          class="width__input__password"
+          id="text__input"
+          type="password"
+          required
+        />
+        <div class="underline"></div>
+      </div>
+      <div class="input-container-two__two">
+        <p class="p-2">Password</p>
+        <div class="input-container mx-2">
+          <input
+            type="password"
+            id="text__input__two"
+            placeholder="Placeholder"
+            required
+          />
+          <div class="underline"></div>
+        </div>
+      </div>
+      <div class="input-container-two__two">
+        <div>
+          <p class="disabled p-2">Disabled</p>
+        </div>
+        <div class="dotted__line d-flex flex-column mx-2">
+          <p>placeholder</p>
+          <p>Disabled input here</p>
+          <p class="dotted__line">
+            ......................................................................
+          </p>
+        </div>
+      </div>
+      <div class="static__control">
+        <div>
+          <p class="p-2">Static Control</p>
+        </div>
+        <div class="d-flex flex-column mx-2">
+          <p>hellocreative-tim.com</p>
+        </div>
+      </div>
+      <div class="static__control">
+        <div>
+          <p class="p-2">Checkboxes and radios</p>
+        </div>
+        <div class="d-flex flex-column">
+          <div class="d-flex flex-column">
+            <div id="check__box__three" class="d-flex align-items-center">
+              <input type="checkbox" id="styled-checkbox" />
+              <p class="px-2">First Checkbox</p>
+            </div>
+          </div>
+          <div class="d-flex flex-column">
+            <div id="check__box__three" class="d-flex align-items-center">
+              <input type="checkbox" id="styled-checkbox" />
+              <p class="px-2">Second Checkbox</p>
+            </div>
+          </div>
+          <div class="d-flex flex-column mx-1">
+            <div id="check__box__three" class="d-flex align-items-center">
+              <input type="checkbox" id="checkbox" />
+              <p class="px-2">First Radio</p>
+            </div>
+          </div>
+          <div class="d-flex flex-column mx-1">
+            <div id="check__box__three" class="d-flex align-items-center">
+              <input type="checkbox" id="checkbox" />
+              <p class="px-2">Second Radio</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="static__control__two">
+        <div>
+          <p class="p-2">Inline checkboxes</p>
+        </div>
+        <div class="d-flex flex-row">
+          <div class="d-flex flex-column">
+            <div id="check__box__three" class="d-flex align-items-center">
+              <input type="checkbox" id="styled-checkbox" />
+              <p class="px-2">A</p>
+            </div>
+          </div>
+          <div class="d-flex flex-column">
+            <div id="check__box__three" class="d-flex align-items-center">
+              <input type="checkbox" id="styled-checkbox" />
+              <p class="px-2">B</p>
+            </div>
+          </div>
+          <div class="d-flex flex-column">
+            <div id="check__box__three" class="d-flex align-items-center">
+              <input type="checkbox" id="styled-checkbox" />
+              <p class="px-2">C</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section__three__wrapper rounded">
+    <div class="section__top">
+      <p class="form__title form__icons__three bg-danger rounded text-white">
+        Invalid Variants
+      </p>
+    </div>
+    <div class="section__three__left">
+      <div class="row section__title">
+        <p class="p-3">Custom Checkboxes & radios</p>
+        <div class="section__three__left__right">
+          <div class="section__three__left__two">
+            <div class="d-flex flex-column">
+              <div class="d-flex flex-column my-1">
+                <div id="check__box__three" class="d-flex align-items-center">
+                  <input type="checkbox" id="styled-checkbox" />
+                  <p class="px-2">Checked</p>
+                </div>
+              </div>
+              <div class="d-flex flex-column my-1">
+                <div id="check__box__three" class="d-flex align-items-center">
+                  <input type="checkbox" id="styled-checkbox" />
+                  <p class="px-2">Unchecked</p>
+                </div>
+              </div>
+              <div class="d-flex flex-column my-1">
+                <div id="check__box__three" class="d-flex align-items-center">
+                  <input type="checkbox" id="styled-checkbox" />
+                  <p class="px-2">Disabled Checked</p>
+                </div>
+              </div>
+              <div class="d-flex flex- my-1">
+                <div id="check__box__three" class="d-flex align-items-center">
+                  <input type="checkbox" id="styled-checkbox" />
+                  <p class="px-2">Undisabled Checked</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section__three__right">
+            <div class="radio__top">
+              <div class="radio__wrapper">
+                <input type="checkbox" id="checkbox" />
+                <p>Radio is on</p>
+              </div>
+              <div class="radio__wrapper">
+                <input type="checkbox" id="checkbox" />
+                <p>Radio is off</p>
+              </div>
+              <div class="radio__wrapper">
+                <input type="checkbox" id="checkbox" />
+                <p>disabled radio is on</p>
+              </div>
+              <div class="radio__wrapper">
+                <input type="checkbox" id="checkbox" />
+                <p>disabled is on</p>
+              </div>
+            </div>
+            <div class="radio__bottom">
+              <div class="radio__wrapper">
+                <input type="checkbox" id="checkbox" />
+                <p>Disabled radio is on</p>
+              </div>
+              <div class="radio__wrapper">
+                <input type="checkbox" id="checkbox" />
+
+                <p>Disabled radio is off</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="input__field">
+      <div class="input-container-two">
+        <p>Input with success</p>
+        <div class="input-container__success__error">
+          <input type="text" id="emailTwo" placeholder=" " required />
+          <!-- <label class="text-success" for="email">Success input</label> -->
+          <div class="underline"></div>
+        </div>
+      </div>
+      <div class="input-container-two">
+        <p>Input with error</p>
+        <div class="input-container__success__error">
+          <input type="text" id="emailTwo" placeholder=" " required />
+          <!-- <label class="text-danger" for="email">Error input</label> -->
+          <div class="underline"></div>
+        </div>
+      </div>
+      <div class="container__input">
+        <h3 class="column__size__text">Column sizing</h3>
+        <div class="col__wrapper">
+          <div class="input-container-two">
+            <div class="input-container mx-2">
+              <input type="text" id="emailThree" placeholder=" " required />
+              <label for="email">.col-md-3</label>
+              <div class="underline"></div>
+            </div>
+          </div>
+          <div class="input-container-two">
+            <div class="input-container">
+              <input type="text" id="emailThree" placeholder=" " required />
+              <label for="email">.col-md-4</label>
+              <div class="underline"></div>
+            </div>
+          </div>
+          <div class="input-container-two">
+            <div class="input-container">
+              <input type="text" id="emailThree" placeholder=" " required />
+              <label for="email">.col-md-5</label>
+              <div class="underline"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row footer">
+    <div class="col-sm-6 contact__wrapper">
+      <a id="contact__link" href="">CREATIVE TIM</a>
+      <a id="contact__link" href="">ABOUT US</a>
+      <a id="contact__link" href="">BLOG</a>
+      <a id="contact__link" href="">LICENSE</a>
+    </div>
+    <span class="col span">
+      © 2025, made with<i class="icon22 ri-heart-line"></i>by Creative Tim for a
+      better web.
+    </span>
+  </div>
+</div>

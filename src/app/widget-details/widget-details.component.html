@@ -1,0 +1,370 @@
+<div class="section" (click)="showNotificationTwo($event)">
+  <div class="wrapper">
+    <div class="hero__section">
+      <div class="left">
+        <div class="toggleSideBar" (click)="toggleSideBar()">
+          <i
+            id="i"
+            [ngClass]="
+              isOpen ? 'ri-dashboard-horizontal-fill' : 'ri-more-2-fill'
+            "
+          ></i>
+        </div>
+        <div>
+          <span class="h4">Widgets</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="search__wrapper">
+          <div class="input-container">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div>
+            <i id="i" class="ri-search-line"></i>
+          </div>
+        </div>
+        <div>
+          <i id="except" class="ri-dashboard-fill"></i>
+        </div>
+        <div class="notification-wrapper" (click)="showNotification($event)">
+          <i id="except" class="ri-notification-3-fill"></i>
+          <span class="notification-count">5</span>
+        </div>
+        <div class="notification__details" *ngIf="notification">
+          <p class="notification__item">Mike John responded to your email</p>
+          <p class="notification__item">You have 5 new tasks</p>
+          <p class="notification__item">You're now friend with Andrew</p>
+          <p class="notification__item">Another Notification</p>
+          <p class="notification__item">Another One</p>
+        </div>
+        <div>
+          <i id="except" class="ri-user-3-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section__one rounded my-3">
+    <div class="section__one__left">
+      <div class="section__one__top py-4 bg-warning rounded mx-3">
+        <span>Employees Stats</span>
+        <p>New Employees on the 15th September, 2025</p>
+      </div>
+      <div class="table-responsive">
+        <div class="table__wrapper">
+          <table class="country-table">
+            <tr>
+              <th class="text-warning"><p>ID</p></th>
+              <th class="text-warning"><p>Name</p></th>
+              <th class="text-warning"><p>Salary</p></th>
+              <th class="text-warning"><p>Country</p></th>
+            </tr>
+            <tr>
+              <td>
+                <span>1</span>
+              </td>
+              <td class="country-cell">
+                <span>Dakota Rice</span>
+              </td>
+              <td>$36,738</td>
+              <td>Niger</td>
+            </tr>
+            <tr>
+              <td>
+                <span>2</span>
+              </td>
+              <td class="country-cell">
+                <span>Minerva Hooper</span>
+              </td>
+              <td>$23,789</td>
+              <td>Curaçao</td>
+            </tr>
+            <tr>
+              <td>
+                <span>3</span>
+              </td>
+              <td class="country-cell">
+                <span>Sage Rodriguez</span>
+              </td>
+              <td>$56,142</td>
+              <td>Netherlands</td>
+            </tr>
+            <tr>
+              <td>
+                <span>4</span>
+              </td>
+              <td class="country-cell">
+                <span>Philip Chaney</span>
+              </td>
+              <td>$38,735</td>
+              <td>South Korea</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="section__one__right rounded">
+      <div class="tabs rounded">
+        <div class="tab-header bg-danger my-3 rounded">
+          <button
+            class="col-sm-6"
+            id="btn__one__one"
+            [class]="
+              activeTabIdFour === 'description'
+                ? 'tab-button bg-success text-white active'
+                : 'tab-button text-white'
+            "
+            (click)="viewTabFour('description')"
+          >
+            <i id="dashboard__id" class="ri-bug-2-fill"></i>
+            BUGS
+          </button>
+          <button
+            class="col-sm-3"
+            id="btn__one__one"
+            [class]="
+              activeTabIdFour === 'location'
+                ? 'tab-button bg-light text-dark active'
+                : 'tab-button text-white'
+            "
+            (click)="viewTabFour('location')"
+          >
+            <i id="dashboard__id" class="ri-expand-left-right-line"></i>
+            WEBSITE
+          </button>
+          <button
+            class="col-sm-3"
+            id="btn__one__two"
+            [class]="
+              activeTabIdFour === 'legal-info'
+                ? 'tab-button bg-dark text-white active'
+                : 'tab-button text-white'
+            "
+            (click)="viewTabFour('legal-info')"
+          >
+            <i id="dashboard__id" class="ri-cloudy-2-fill"></i>
+            SERVER
+          </button>
+        </div>
+        <div class="tab-content-three rounded">
+          <div
+            [class.active]="activeTabIdFour === 'description'"
+            class="tab-pane"
+          >
+            <div class="tab__pane__details my-2">
+              <input type="checkbox" id="styled-checkbox" />
+              <p class="tab__text">
+                Sign contract for 'What are conference organizers afraid of?'
+              </p>
+              <div class="edit__delete">
+                <i class="ri-pencil-fill text-success"></i>
+                <i class="ri-close-fill text-danger"></i>
+              </div>
+            </div>
+            <div class="tab__pane__details my-2">
+              <input type="checkbox" id="styled-checkbox" />
+              <p class="tab__text">
+                Lines From Great Russian Literature? Or E-mails From My Boss?
+              </p>
+              <div class="edit__delete">
+                <i class="ri-pencil-fill text-success"></i>
+                <i class="ri-close-fill text-danger"></i>
+              </div>
+            </div>
+            <div class="tab__pane__details">
+              <div>
+                <input type="checkbox" id="styled-checkbox" />
+              </div>
+              <p class="tab__text">
+                Flooded: One year later, assessing what was lost and what was
+                found when a ravaging rain swept through metro Detroit
+              </p>
+              <div class="edit__delete">
+                <i class="ri-pencil-fill text-success"></i>
+                <i class="ri-close-fill text-danger"></i>
+              </div>
+            </div>
+            <div class="tab__pane__details">
+              <input type="checkbox" id="styled-checkbox" />
+              <p class="tab__text">
+                Create 4 Invisible User Experiences you Never Knew About
+              </p>
+              <div class="edit__delete">
+                <i class="ri-pencil-fill text-success"></i>
+                <i class="ri-close-fill text-danger"></i>
+              </div>
+            </div>
+          </div>
+          <div [class.active]="activeTabIdFour === 'location'" class="tab-pane">
+            <div class="tab__pane__details">
+              <input type="checkbox" id="styled-checkbox" />
+              <p class="tab__text">
+                Flooded: One year later, assessing metro Detroit
+              </p>
+              <div class="edit__delete">
+                <i class="ri-pencil-fill text-success"></i>
+                <i class="ri-close-fill text-danger"></i>
+              </div>
+            </div>
+            <div class="tab__pane__details">
+              <div>
+                <input type="checkbox" id="styled-checkbox" />
+              </div>
+              <p class="tab__text">
+                Sign contract for 'What are conference organizers afraid of?'
+              </p>
+              <div class="edit__delete">
+                <i class="ri-pencil-fill text-success"></i>
+                <i class="ri-close-fill text-danger"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            [class.active]="activeTabIdFour === 'legal-info'"
+            class="tab-pane"
+          >
+            <div class="tab__pane__details">
+              <input type="checkbox" id="styled-checkbox" />
+              <p class="tab__text">
+                Flooded: One year later, assessing metro Detroit
+              </p>
+              <div class="edit__delete">
+                <i class="ri-pencil-fill text-success"></i>
+                <i class="ri-close-fill text-danger"></i>
+              </div>
+            </div>
+            <div class="tab__pane__details">
+              <input type="checkbox" id="styled-checkbox" />
+              <p class="tab__text">
+                Lines From Great Russian Literature? Or E-mails From My Boss?
+              </p>
+              <div class="edit__delete">
+                <i class="ri-pencil-fill text-success"></i>
+                <i class="ri-close-fill text-danger"></i>
+              </div>
+            </div>
+            <div class="tab__pane__details">
+              <input type="checkbox" id="styled-checkbox" />
+              <p class=" tab__text">
+                Sign contract for 'What are conference organizers afraid of?'
+              </p>
+              <div class="edit__delete">
+                <i class="ri-pencil-fill text-success"></i>
+                <i class="ri-close-fill text-danger"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section__two__wrapper__group my-4">
+    <div class="section__two">
+      <div class="row section__two__left__wrapper">
+        <div
+          (click)="activeBackground('one')"
+          class="section__two__left rounded"
+          [class]="bgActive === 'one' ? 'bg-white' : 'bg-transparent'"
+          [style]="bgActive === 'one' ? 'text-success' : 'text-dark'"
+        >
+          <p>SMALL COMPANY</p>
+          <div class="home">
+            <i class="ri-home-2-fill text-info"></i>
+          </div>
+          <span>$29</span>
+          <p class="text-center px-3">
+            This is good if your company size is between 2 to 10 Persons
+          </p>
+          <p class="btn bg-info text-white">CHOOSE A PLAN</p>
+        </div>
+        <div
+          (click)="activeBackground('two')"
+          class="section__two__left rounded"
+          [class]="bgActive === 'two' ? 'bg-white' : 'bg-transparent'"
+        >
+          <p>FREELANCER</p>
+          <div class="home">
+            <i class="ri-armchair-fill text-success"></i>
+          </div>
+          <span>FREE</span>
+          <p class="text-center px-3">
+            This is good if your company size is between 2 to 10 Persons
+          </p>
+          <p class="btn bg-success text-white">CHOOSE A PLAN</p>
+        </div>
+      </div>
+      <div class="profile__details rounded my-4">
+        <i class="ri-double-quotes-r"></i>
+        <p>
+          Your products, all the kits that I have downloaded from your site and
+          worked with are sooo cool! I love the color mixtures, cards...
+          everything. Keep up the great work!
+        </p>
+        <p>Alec Thompson</p>
+        <p>AlecThompson</p>
+        <img src="/assets/lady.jpg" alt="" id="profile__image" />
+      </div>
+    </div>
+    <div class="right__setion">
+      <div class="vertical__line"></div>
+      <div class="section__two__right">
+        <div class="icon__verticalLine">
+          <div class="icon__right">
+            <i
+              class="right__icons ri-printer-cloud-fill bg-danger text-white"
+            ></i>
+          </div>
+        </div>
+        <div class="info__wrapper rounded">
+          <i class="white__icon ri-arrow-left-s-fill"></i>
+          <p class="info__title">SOME TITLE</p>
+          <p>
+            Wifey made the best Father's Day meal ever. So thankful so happy so
+            blessed. Thank you for making my family We just had fun with the
+            “future” theme !!! It was a fun night all together ... The always
+            rude Kanye Show at 2am Sold Out Famous viewing Figueroa and 12th in
+            downtown.
+          </p>
+          <p>11 hours ago via Twitter</p>
+        </div>
+      </div>
+      <div class="section__two__right my-2">
+        <div class="icon__verticalLine">
+          <div class="icon__right">
+            <i class="right__icons ri-puzzle-fill bg-success text-white"></i>
+          </div>
+        </div>
+        <div class="info__wrapper rounded">
+          <i class="white__icon ri-arrow-left-s-fill"></i>
+          <p class="info__title2 bg-success">ANOTHER ONE</p>
+          <p>
+            Thank God for the support of my wife and real friends. I also wanted
+            to point out that it’s the first album to go number 1 off of
+            streaming!!! I love you Ellen and also my number one design rule of
+            anything I do from shoes to music to homes is that Kim has to like
+            it....
+          </p>
+        </div>
+      </div>
+      <div class="section__two__right">
+        <div class="icon__verticalLine">
+          <div class="icon__right">
+            <i
+              class="right__icons ri-fingerprint-2-fill bg-info text-white"
+            ></i>
+          </div>
+        </div>
+        <div class="info__wrapper rounded">
+          <i class="white__icon ri-arrow-left-s-fill"></i>
+          <p class="info__title2 bg-info">ANOTHER TITLE</p>
+          <p>
+            Called I Miss the Old Kanye That’s all it was Kanye And I love you
+            like Kanye loves Kanye Famous viewing Figueroa and 12th in downtown
+            LA 11:10PM What if Kanye made a song about Kanye Royère doesn't make
+            a Polar bear bed but the Polar bear couch is my favorite piece of
+            furniture we own It wasn’t any Kanyes Set on his goals Kanye
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

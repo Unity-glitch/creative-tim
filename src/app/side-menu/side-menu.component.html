@@ -1,0 +1,411 @@
+<div class="header">
+  <div
+    id="header"
+    [ngClass]="{ 'show-menu': menuOpen }"
+    [ngStyle]="{
+      'background-image': showBackgroundImage
+        ? 'none'
+        : 'url(' + backgroundImage + ')',
+      'background-size': 'cover',
+      'background-position': 'center',
+      'background-color': backgroundColor,
+      'background-blend-mode': 'overlay'
+    }"
+    class="app__logo"
+    [class.open]="isOpen"
+  >
+    <ng-container *ngIf="isOpen; else logoIconOnly">
+      <app-logo></app-logo>
+    </ng-container>
+    <ng-template #logoIconOnly>
+      <span>
+        <img
+          class="logoIcon"
+          src="/assets/Angular_Image-removebg-preview.png"
+          alt="Logo Icon"
+        />
+      </span>
+    </ng-template>
+    <ng-container *ngIf="isOpen; else borderLineOnly"> </ng-container>
+    <ng-template #borderLineOnly>
+      <div class="border__line__logo"></div>
+    </ng-template>
+    <ng-container *ngIf="isOpen; else profileIconOnly">
+      <app-profile></app-profile>
+    </ng-container>
+    <ng-template #profileIconOnly>
+      <span>
+        <img src="/assets/lady.jpg" alt="Profile Icon" />
+      </span>
+    </ng-template>
+    <ng-container *ngIf="isOpen; else borderLineOnly"></ng-container>
+    <ng-template #borderLineOnly>
+      <div class="border__line__logo"></div>
+    </ng-template>
+    <ng-container *ngIf="isOpen; else dashboardIconOnly">
+      <span
+        (click)="dashboard()"
+        class="dashboard__wrapper"
+        [ngStyle]="{
+          'background-color': activeBackground('dashboard-details')
+            ? sideMenuBgColor
+            : ''
+        }"
+      >
+        <i id="db__icon" class="ri-dashboard-fill"></i>
+        <h4 class="h4">Dashboard</h4>
+      </span>
+    </ng-container>
+    <ng-template #dashboardIconOnly>
+      <span
+        (click)="onChangeSideBarMenu()"
+        [ngStyle]="{
+          'background-color': activeBackground('dashboard-details')
+            ? sideMenuBgColor
+            : ''
+        }"
+        routerLink="dashboard-details"
+      >
+        <i id="db__icon" class="ri-dashboard-fill"></i>
+      </span>
+    </ng-template>
+    <ng-container *ngIf="isOpen; else componentIconOnly">
+      <span
+        *ngFor="let menu of menus"
+        (click)="dropDown(menu)"
+        class="component__wrapper"
+        
+      >
+        <i id="db__icon" class="ri-grid-fill"></i>
+        <h4>Component</h4>
+        <span>
+          <i
+            id="db__icon"
+            [ngClass]="
+              menu.expanded ? 'ri-arrow-up-s-fill' : 'ri-arrow-down-s-fill'
+            "
+          ></i>
+        </span>
+      </span>
+      <div
+        *ngFor="let menu of menus"
+        class="submenu"
+        [@expand]="menu.expanded ? 'expanded' : 'collapsed'"
+        
+      >
+        <app-button
+          [ngStyle]="{
+            'background-color': activeBackground('components/button')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="button()"
+        ></app-button>
+        <app-grid
+          [ngStyle]="{
+            'background-color': activeBackground('components/grid')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="grid()"
+        ></app-grid>
+        <app-icon
+          [ngStyle]="{
+            'background-color': activeBackground('components/icon')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="icon()"
+        ></app-icon>
+        <app-notification
+          [ngStyle]="{
+            'background-color': activeBackground('components/notification')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="notification()"
+        ></app-notification>
+        <app-typography
+          [ngStyle]="{
+            'background-color': activeBackground('components/typography')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="typography()"
+        ></app-typography>
+        <app-panel
+          [ngStyle]="{
+            'background-color': activeBackground('components/panel')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="panel()"
+        ></app-panel>
+        <app-sweetalert
+          [ngStyle]="{
+            'background-color': activeBackground('components/sweet-alert')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="sweetAlert()"
+        ></app-sweetalert>
+      </div>
+    </ng-container>
+    <ng-template #componentIconOnly>
+      <div (click)="onChangeSideBarMenu()">
+        <div class="dropdown">
+          <i id="db__icon" class="ri-menu-line"></i>
+        </div>
+      </div>
+    </ng-template>
+    <ng-container *ngIf="isOpen; else formsIconOnly">
+      <span
+        *ngFor="let menu of menusTwo"
+        (click)="dropDownTwo(menu)"
+        class="form__wrapper"
+      >
+        <i id="db__icon" class="ri-survey-fill"></i>
+        <h4 class="h4 form__text">Forms</h4>
+        <span>
+          <i
+            id="db__icon"
+            [ngClass]="
+              menu.expanded ? 'ri-arrow-up-s-fill' : 'ri-arrow-down-s-fill'
+            "
+          ></i>
+        </span>
+      </span>
+      <div
+        *ngFor="let menu of menusTwo"
+        class="submenu"
+        [@expand]="menu.expanded ? 'expanded' : 'collapsed'"
+      >
+        <app-regular-forms
+          [ngStyle]="{
+            'background-color': activeBackground('forms/regular')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="regularForm()"
+        ></app-regular-forms>
+        <app-extended-forms
+          [ngStyle]="{
+            'background-color': activeBackground('forms/extended')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="extendedForm()"
+        ></app-extended-forms>
+        <app-validate
+          [ngStyle]="{
+            'background-color': activeBackground('forms/validation')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="validateForm()"
+        ></app-validate>
+        <app-wizard-form
+          [ngStyle]="{
+            'background-color': activeBackground('forms/wizard')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="wizardForm()"
+        ></app-wizard-form>
+      </div>
+    </ng-container>
+    <ng-template #formsIconOnly>
+      <span (click)="onChangeSideBarMenu()">
+        <i id="db__icon" class="ri-survey-fill"></i>
+      </span>
+    </ng-template>
+    <ng-container *ngIf="isOpen; else tableIconOnly">
+      <div
+        (click)="dropDownFour(menu)"
+        class="table__wrapper"
+        *ngFor="let menu of menusFour"
+      >
+        <i id="db__icon" class="ri-grid-line"></i>
+        <h4 class="h4 form__text">Tables</h4>
+        <span>
+          <i
+            id="db__icon"
+            [ngClass]="
+              menu.expanded ? 'ri-arrow-up-s-fill' : 'ri-arrow-down-s-fill'
+            "
+          ></i>
+        </span>
+      </div>
+      <div
+        *ngFor="let menu of menusFour"
+        class="submenu"
+        [@expand]="menu.expanded ? 'expanded' : 'collapsed'"
+      >
+        <app-regular-table
+          [ngStyle]="{
+            'background-color': activeBackground('tables/regular')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="regularTable()"
+        ></app-regular-table>
+        <app-extended-table
+          [ngStyle]="{
+            'background-color': activeBackground('tables/extended')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="extendedTable()"
+        ></app-extended-table>
+      </div>
+    </ng-container>
+    <ng-template #tableIconOnly>
+      <span (click)="onChangeSideBarMenu()">
+        <i id="db__icon" class="ri-table-2"></i>
+      </span>
+    </ng-template>
+    <ng-container *ngIf="isOpen; else mapIconOnly">
+      <span
+        *ngFor="let menu of menusThree"
+        (click)="dropDownThree(menu)"
+        class="map__wrapper"
+      >
+        <i id="db__icon" class="ri-map-pin-2-fill"></i>
+        <h4 class="h4 form__text">Maps</h4>
+        <span>
+          <i
+            id="db__icon"
+            [ngClass]="
+              menu.expanded ? 'ri-arrow-up-s-fill' : 'ri-arrow-down-s-fill'
+            "
+          ></i>
+        </span>
+      </span>
+      <div
+        *ngFor="let menu of menusThree"
+        class="submenu"
+        [@expand]="menu.expanded ? 'expanded' : 'collapsed'"
+      >
+        <app-google-map
+          [ngStyle]="{
+            'background-color': activeBackground('maps/google')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="map()"
+        ></app-google-map>
+        <app-full-screen-map
+          [ngStyle]="{
+            'background-color': activeBackground('maps/fullscreen')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="fullMap()"
+        ></app-full-screen-map>
+        <app-vector-map
+          [ngStyle]="{
+            'background-color': activeBackground('maps/vector')
+              ? sideMenuBgColor
+              : ''
+          }"
+          (click)="vectorMap()"
+        ></app-vector-map>
+      </div>
+    </ng-container>
+    <ng-template #mapIconOnly>
+      <span (click)="onChangeSideBarMenu()">
+        <i id="db__icon" class="ri-map-pin-2-fill"></i>
+      </span>
+    </ng-template>
+    <ng-container *ngIf="isOpen; else widgetIconOnly">
+      <span
+        id="widget__text__icon"
+        class="widget__wrapper"
+        (click)="widget()"
+        [ngStyle]="{
+          'background-color': activeBackground('widgets') ? sideMenuBgColor : ''
+        }"
+      >
+        <i id="db__icon" class="ri-artboard-fill widget__text__icon"></i>
+        <h4 class="h4 widget__text__icon">Widgets</h4>
+        <span class="d-flex general__style">
+          <i></i>
+        </span>
+      </span>
+    </ng-container>
+    <ng-template #widgetIconOnly>
+      <span (click)="onChangeSideBarMenu()">
+        <i id="db__icon" class="ri-artboard-fill"></i>
+      </span>
+    </ng-template>
+    <ng-container *ngIf="isOpen; else chartIconOnly">
+      <span class="chart__wrapper">
+        <i id="db__icon" class="ri-line-chart-fill"></i>
+        <h4 class="h4">Charts</h4>
+        <span class="d-flex mx-3">
+          <i></i>
+        </span>
+      </span>
+    </ng-container>
+    <ng-template #chartIconOnly>
+      <span>
+        <i id="db__icon" class="ri-line-chart-fill"></i>
+      </span>
+    </ng-template>
+    <ng-container *ngIf="isOpen; else calenderIconOnly">
+      <span class="calender__wrapper">
+        <i id="db__icon" class="ri-calendar-2-fill"></i>
+        <h4 class="h4">Calender</h4>
+      </span>
+    </ng-container>
+    <ng-template #calenderIconOnly>
+      <span>
+        <i id="db__icon" class="ri-calendar-2-fill"></i>
+      </span>
+    </ng-template>
+    <ng-container *ngIf="isOpen; else pagesIconOnly">
+      <span class="pages__wrapper">
+        <i id="db__icon" class="ri-gallery-fill"></i>
+        <h4 class="h4">Pages</h4>
+        <span class="d-flex mx-3">
+          <i></i>
+        </span>
+      </span>
+    </ng-container>
+    <ng-template #pagesIconOnly>
+      <span>
+        <i id="db__icon" class="ri-gallery-fill"></i>
+      </span>
+    </ng-template>
+    <ng-container *ngIf="isOpen; else documentationIconOnly">
+      <span (click)="document()" class="doc__wrapper">
+        <i id="db__icon" class="ri-graduation-cap-fill"></i>
+        <h4 class="h4">Documentions</h4>
+      </span>
+    </ng-container>
+    <ng-template #documentationIconOnly>
+      <span>
+        <i id="db__icon" class="ri-graduation-cap-fill"></i>
+      </span>
+    </ng-template>
+  </div>
+  <div class="dashboard__details">
+    <div (click)="toggleMenu()" class="menu__tab">
+      <i
+        [class]="
+          menuOpen
+            ? 'ri-close-line menu__toggle text-white py-2'
+            : 'ri-menu-fill menu__toggle text-dark'
+        "
+      ></i>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<app-settings
+  (toggleMenuBar)="onChangeSideBarMenu()"
+  (toggleBackgroundImage)="onChangeImage($event)"
+  (changeBackgroundColor)="onSelectColor($event)"
+  (imageSelected)="onImageSelected($event)"
+  (bgColorChange)="onBgColor($event)"
+></app-settings>

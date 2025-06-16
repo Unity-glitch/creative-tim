@@ -1,0 +1,397 @@
+<div class="section" (click)="showNotificationTwo($event)">
+  <div class="wrapper">
+    <div class="hero__section">
+      <div class="left">
+        <div class="toggleSideBar" (click)="toggleSideBar()">
+          <i
+            id="i"
+            [ngClass]="
+              isOpen ? 'ri-dashboard-horizontal-fill' : 'ri-more-2-fill'
+            "
+          ></i>
+        </div>
+        <div>
+          <span class="h4">Extended Tables</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="search__wrapper">
+          <div class="input-container">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div>
+            <i id="i" class="ri-search-line"></i>
+          </div>
+        </div>
+        <div>
+          <i id="except" class="ri-dashboard-fill"></i>
+        </div>
+        <div class="notification-wrapper" (click)="showNotification($event)">
+          <i id="except" class="ri-notification-3-fill"></i>
+          <span class="notification-count">5</span>
+        </div>
+        <div class="notification__details" *ngIf="notification">
+          <p class="notification__item">Mike John responded to your email</p>
+          <p class="notification__item">You have 5 new tasks</p>
+          <p class="notification__item">You're now friend with Andrew</p>
+          <p class="notification__item">Another Notification</p>
+          <p class="notification__item">Another One</p>
+        </div>
+        <div>
+          <i id="except" class="ri-user-3-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section__one__wrapper rounded">
+    <div class="top__icon__text">
+      <i
+        class="ri-archive-drawer-fill icon__table bg-danger text-white rounded"
+      ></i>
+      <p class="fs-6">Simple Table</p>
+    </div>
+    <div class="table-responsive">
+      <table class="table purple__text">
+        <thead>
+          <tr class="fw-300">
+            <td class="purple__text" scope="col">Name</td>
+            <td class="purple__text" scope="col">Job Position</td>
+            <td class="purple__text" scope="col">Since</td>
+            <td class="purple__text" scope="col">Salary</td>
+            <td class="purple__text" scope="col">Actions</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dakota Rice</td>
+            <td>Develop</td>
+            <td>2013</td>
+            <td>€99,225</td>
+            <td>
+              <div class="table__icons">
+                <i class="ri-user-fill text-info p-2 rounded"></i>
+                <i class="ri-pencil-fill text-success p-2 rounded"></i>
+                <i class="ri-close-line text-danger p-2 rounded"></i>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Minerva Hooper</td>
+            <td>Design</td>
+            <td>2012</td>
+            <td>$23,789</td>
+            <td>
+              <div class="table__icons">
+                <i
+                  class="ri-user-fill bg-info text-white p-2 border_radius"
+                ></i>
+                <i
+                  class="ri-pencil-fill bg-success text-white p-2 border_radius"
+                ></i>
+                <i
+                  class="ri-close-line bg-danger text-white p-2 border_radius"
+                ></i>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Sage Rodriguez</td>
+            <td>Develop</td>
+            <td>2014</td>
+            <td class="purple__text">$56,142</td>
+            <td>
+              <div class="table__icons">
+                <i class="ri-user-fill text-info p-2 rounded"></i>
+                <i class="ri-pencil-fill text-success p-2 rounded"></i>
+                <i class="ri-close-line text-danger p-2 rounded"></i>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Philip Chaney</td>
+            <td>Design</td>
+            <td>2015</td>
+            <td class="purple__text">$63,542</td>
+            <td>
+              <div class="table__icons">
+                <i class="ri-user-fill bg-info text-white p-2 rounded"></i>
+                <i class="ri-pencil-fill bg-success text-white p-2 rounded"></i>
+                <i class="ri-close-line bg-danger text-white p-2 rounded"></i>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Doris Greene</td>
+            <td>Marketing</td>
+            <td>2016</td>
+            <td class="purple__text">$38,735</td>
+            <td>
+              <div class="table__icons">
+                <i class="ri-user-fill text-info p-2 rounded"></i>
+                <i class="ri-pencil-fill text-success p-2 rounded"></i>
+                <i class="ri-close-line text-danger p-2 rounded"></i>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Mason Porter</td>
+            <td>Communication</td>
+            <td>2017</td>
+            <td class="purple__text">$78,615</td>
+            <td>
+              <div class="table__icons">
+                <i
+                  class="ri-user-fill bg-info text-white p-2 border_radius"
+                ></i>
+                <i
+                  class="ri-pencil-fill bg-success text-white p-2 border_radius"
+                ></i>
+                <i
+                  class="ri-close-line bg-danger text-white p-2 border_radius"
+                ></i>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="section__one__wrapper rounded">
+    <div class="top__icon__text">
+      <i
+        class="ri-archive-drawer-fill icon__table bg-danger text-white rounded"
+      ></i>
+      <p class="fs-6">Stripped Table</p>
+    </div>
+    <div class="table-responsive">
+      <table class="table purple__text">
+        <thead>
+          <tr class="fw-300">
+            <td class="purple__text" scope="col">#</td>
+            <td class="purple__text" scope="col"></td>
+            <td class="purple__text" scope="col">Product Name</td>
+            <td class="purple__text" scope="col">Type</td>
+            <td class="purple__text" scope="col">Qty</td>
+            <td class="purple__text" scope="col">Price</td>
+            <td class="purple__text" scope="col">Amount</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>
+              <div id="check__box__two" class="d-flex align-items-center">
+                <input type="checkbox" id="styled-checkbox" />
+              </div>
+            </td>
+            <td>Moleskine Agenda</td>
+            <td>Office</td>
+            <td>49</td>
+            <td>€49</td>
+            <td>€49, 222</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>
+              <div id="check__box__two" class="d-flex align-items-center">
+                <input type="checkbox" id="styled-checkbox" />
+              </div>
+            </td>
+            <td>Stabilo Pen</td>
+            <td>Office</td>
+            <td>23</td>
+            <td>$23</td>
+            <td>€29, 122</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>
+              <div id="check__box__two" class="d-flex align-items-center">
+                <input type="checkbox" id="styled-checkbox" />
+              </div>
+            </td>
+            <td>A4 Paper Pack</td>
+            <td>Office</td>
+            <td class="purple__text">56</td>
+            <td class="purple__text">$56</td>
+            <td>€4, 312</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>
+              <div id="check__box__two" class="d-flex align-items-center">
+                <input type="checkbox" id="styled-checkbox" />
+              </div>
+            </td>
+            <td>Apple iPhone</td>
+            <td>Office</td>
+            <td class="purple__text">63</td>
+            <td class="purple__text">$63</td>
+            <td>€4, 222</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>
+              <div id="check__box__two" class="d-flex align-items-center">
+                <input type="checkbox" id="styled-checkbox" />
+              </div>
+            </td>
+            <td>Apple iPhone</td>
+            <td>Communication</td>
+            <td class="purple__text">38</td>
+            <td class="purple__text">$38</td>
+            <td>€4, 449</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>
+              <div id="check__box__two" class="d-flex align-items-center">
+                <input type="checkbox" id="styled-checkbox" />
+              </div>
+            </td>
+            <td>Apple iPhone</td>
+            <td>Meeting</td>
+            <td class="purple__text">78</td>
+            <td class="purple__text">$78</td>
+            <td>€7, 556</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="fw-bold">Total</td>
+            <td class="fw-bold">€12,999</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="section__one__wrapper rounded">
+    <div class="top__icon__text">
+      <i
+        class="ri-archive-drawer-fill icon__table bg-danger text-white rounded"
+      ></i>
+      <p class="fs-6">Shopping Cart Table</p>
+    </div>
+    <div class="table-responsive">
+      <table class="table purple__text">
+        <thead>
+          <tr class="fw-300">
+            <td class="purple__text number" scope="col">Product</td>
+            <td class="purple__text" scope="col">color</td>
+            <td class="purple__text" scope="col">Size</td>
+            <td class="purple__text" scope="col">Price</td>
+            <td class="purple__text number" scope="col">QTY</td>
+            <td class="purple__text" scope="col">Amount</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="product__wrapper">
+                <img class="product__img" src="assets/product1.jpg" alt="" />
+                <div class="product__name">
+                  <p class="fs-5">Spring Jacket</p>
+                  <p>by Dolce&Gabbana</p>
+                </div>
+              </div>
+            </td>
+            <td>Red</td>
+            <td>M</td>
+            <td>€{{price1}}</td>
+            <td>
+              <div class="quantity__wrapper">
+                <p  class="number">{{number1}}</p>
+                <div class="button__wrapper">
+                  <p class="text-white px-3 py-1 small__icon" (click)="minus1()">-</p>
+                  <p class="text-white px-3 py-1 small__icon" (click)="plus1()">+</p>
+                </div>
+              </div>
+            </td>
+            <td>€{{ result1 }}</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product__wrapper">
+                <img class="product__img" src="assets/product2.jpg" alt="" />
+                <div class="product__name">
+                  <p class="fs-5">Short Pants</p>
+                  <p>by Pucci</p>
+                </div>
+              </div>
+            </td>
+            <td>Purple</td>
+            <td>M</td>
+            <td>€{{price2}}</td>
+            <td>
+              <div class="quantity__wrapper">
+                <p  class="number">{{number2}}</p>
+                <div class="button__wrapper">
+                  <p class="text-white px-3 py-1 small__icon" (click)="minus2()">-</p>
+                  <p class="text-white px-3 py-1 small__icon" (click)="plus2()">+</p>
+                </div>
+              </div>
+            </td>
+            <td>€{{ result2 }}</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product__wrapper">
+                <img class="product__img" src="assets/product3.jpg" alt="" />
+                <div class="product__name">
+                  <p class="fs-5">Pencil Skirt</p>
+                  <p>by Valentino</p>
+                </div>
+              </div>
+            </td>
+            <td>White</td>
+            <td>XL</td>
+            <td>€{{price3}}</td>
+            <td>
+              <div class="quantity__wrapper">
+                <p  class="number">{{number3}}</p>
+                <div class="button__wrapper">
+                  <p class="text-white px-3 py-1 small__icon" (click)="minus3()">-</p>
+                  <p class="text-white px-3 py-1 small__icon" (click)="plus3()">+</p>
+                </div>
+              </div>
+            </td>
+            <td>€{{ result3 }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="fw-bold bg-info pointer text-white text-center" (click)="displayTotal()">Total</td>
+            <td class="fw-bold">€{{totalValues}}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <button class="complete__purchase bg-info text-white">COMPLETE PURCHASE</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row footer">
+    <div class="col-sm-6 contact__wrapper">
+      <a id="contact__link" href="">CREATIVE TIM</a>
+      <a id="contact__link" href="">ABOUT US</a>
+      <a id="contact__link" href="">BLOG</a>
+      <a id="contact__link" href="">LICENSE</a>
+    </div>
+    <span class="col span">
+      © 2025, made with<i class="icon22 ri-heart-line"></i>by Creative Tim for a
+      better web.
+    </span>
+  </div>
+</div>

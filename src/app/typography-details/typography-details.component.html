@@ -1,0 +1,144 @@
+<div class="section" (click)="showNotificationTwo($event)">
+  <div class="wrapper">
+    <div class="hero__section">
+      <div class="left">
+        <div class="toggleSideBar" (click)="toggleSideBar()">
+          <i
+            id="i"
+            [ngClass]="
+              isOpen ? 'ri-dashboard-horizontal-fill' : 'ri-more-2-fill'
+            "
+          ></i>
+        </div>
+        <div>
+          <span class="h4">Typography</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="search__wrapper">
+          <div class="input-container">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div>
+            <i id="i" class="ri-search-line"></i>
+          </div>
+        </div>
+        <div>
+          <i id="except" class="ri-dashboard-fill"></i>
+        </div>
+        <div class="notification-wrapper" (click)="showNotification($event)">
+          <i id="except" class="ri-notification-3-fill"></i>
+          <span class="notification-count">5</span>
+        </div>
+        <div class="notification__details" *ngIf="notification">
+          <p class="notification__item">Mike John responded to your email</p>
+          <p class="notification__item">You have 5 new tasks</p>
+          <p class="notification__item">You're now friend with Andrew</p>
+          <p class="notification__item">Another Notification</p>
+          <p class="notification__item">Another One</p>
+        </div>
+        <div>
+          <i id="except" class="ri-user-3-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class="text-center fs-5 p-2">Material Dashboard Heading</h3>
+  <h4 class="p-2">Created using Roboto Font Family</h4>
+  <div class="section__two">
+    <h3>Typography</h3>
+    <div class="content">
+      <p>Heading 1</p>
+      <h1 class="edit__h1">The Life of Material Kit</h1>
+    </div>
+    <div class="content">
+      <p>Heading 2</p>
+      <h2 class="edit__h2">The Life of Material Kit</h2>
+    </div>
+    <div class="content">
+      <p>Heading 3</p>
+      <h3 class="edit__h3">The Life of Material Kit</h3>
+    </div>
+    <div class="content">
+      <p>Heading 4</p>
+      <h4 class="edit__h4">The Life of Material Kit</h4>
+    </div>
+    <div class="content">
+      <p>Heading 5</p>
+      <h5 class="edit__h5">The Life of Material Kit</h5>
+    </div>
+    <div class="content">
+      <p>Heading 6</p>
+      <h6 class="edit__h6">The Life of Material Kit</h6>
+    </div>
+    <div class="content">
+      <q>Quotes</q>
+      <q>Kanye West, Musician</q>
+    </div>
+    <div class="content py-3">
+      <p>Muted Text</p>
+      <p
+        >I will be the leader of a company that ends up being worth billions of
+        dollars, because I got the answers...</p
+      >
+    </div>
+    <div class="content py-3">
+      <p>Primary Text</p>
+      <p class="text-primary"
+        >I will be the leader of a company that ends up being worth billions of
+        dollars, because I got the answers...</p
+      >
+    </div>
+    <div class="content py-3">
+      <p>Info Text</p>
+      <p class="text-info"
+        >I will be the leader of a company that ends up being worth billions of
+        dollars, because I got the answers...</p
+      >
+    </div>
+    <div class="content py-3">
+      <p>Success Text</p>
+      <p class="text-success"
+        >I will be the leader of a company that ends up being worth billions of
+        dollars, because I got the answers...</p
+      >
+    </div>
+    <div class="content py-3">
+      <p>Warning Text</p>
+      <p class="text-warning"
+        >I will be the leader of a company that ends up being worth billions of
+        dollars, because I got the answers...</p
+      >
+    </div>
+    <div class="content py-3">
+      <p>Danger Text</p>
+      <p class="text-danger"
+        >I will be the leader of a company that ends up being worth billions of
+        dollars, because I got the answers...</p
+      >
+    </div>
+    <div class="content py-3">
+      <p>Small Tag</p>
+      <div>
+        <p class="edit__h2 text-dark"
+        >Header with small Subtitle</p
+      >
+      <p class="text-dark edit__h4 fw-bold"
+        >Use "Small" tag for the headers</p
+      >
+      </div>
+    </div>
+  </div>
+  <div class="row footer">
+    <div class="col-lg-6 col-md-6 col-sm-6 contact__wrapper">
+      <a id="contact__link" href="">CREATIVE TIM</a>
+      <a id="contact__link" href="">ABOUT US</a>
+      <a id="contact__link" href="">BLOG</a>
+      <a id="contact__link" href="">LICENSE</a>
+    </div>
+    <h4 class="col-lg-6 col-md-6 col-sm-6">
+      © 2025, made with<i class="icon22 ri-heart-fill"></i>by Creative Tim for a
+      better web.
+    </h4>
+  </div>
+</div>

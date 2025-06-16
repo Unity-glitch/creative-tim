@@ -1,0 +1,250 @@
+<div class="section" (click)="showNotificationTwo($event)">
+  <div class="wrapper">
+    <div class="hero__section">
+      <div class="left">
+        <div class="toggleSideBar" (click)="toggleSideBar()">
+          <i
+            id="i"
+            [ngClass]="
+              isOpen ? 'ri-dashboard-horizontal-fill' : 'ri-more-2-fill'
+            "
+          ></i>
+        </div>
+        <div>
+          <span class="h4">Sweet Alert</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="search__wrapper">
+          <div class="input-container">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div>
+            <i id="i" class="ri-search-line"></i>
+          </div>
+        </div>
+        <div>
+          <i id="except" class="ri-dashboard-fill"></i>
+        </div>
+        <div class="notification-wrapper" (click)="showNotification($event)">
+          <i id="except" class="ri-notification-3-fill"></i>
+          <span class="notification-count">5</span>
+        </div>
+        <div class="notification__details" *ngIf="notification">
+          <p class="notification__item">Mike John responded to your email</p>
+          <p class="notification__item">You have 5 new tasks</p>
+          <p class="notification__item">You're now friend with Andrew</p>
+          <p class="notification__item">Another Notification</p>
+          <p class="notification__item">Another One</p>
+        </div>
+        <div>
+          <i id="except" class="ri-user-3-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class="text-center fs-5 p-2">Sweet Alert 2</h3>
+  <h4 class="p-2">
+    A beautiful plugin, that replace the classic alert, Handcrafted by our
+    friend Tristan Edwards. Please check out the full documentation.
+  </h4>
+
+  <div id="container__wrapper" class="container text-center">
+    <div class="row">
+      <div class="rounded my-2" id="sample__wrapper">
+        <h4>Basic Example</h4>
+        <button id="try__me" class="bg-danger rounded" (click)="check()">
+          TRY ME!
+        </button>
+      </div>
+      <div class="rounded my-2" id="sample__wrapper">
+        <h4>A Title with a text under</h4>
+        <button (click)="checkTwo()" id="try__me" class="bg-info rounded">
+          TRY ME!
+        </button>
+      </div>
+      <div class="rounded my-2" id="sample__wrapper">
+        <h4>A Success Message</h4>
+        <button (click)="success()" id="try__me" class="bg-success rounded">
+          TRY ME!
+        </button>
+      </div>
+      <div class="rounded my-2" id="sample__wrapper">
+        <h4>Custom HTML Description</h4>
+        <button (click)="checkThree()" id="try__me" class="bg-primary rounded">
+          TRY ME!
+        </button>
+      </div>
+      <div class="rounded my-2" id="sample__wrapper">
+        <h4>
+          A warning message, with a function attached to the "Confirm" Button...
+        </h4>
+        <button (click)="confirm()" id="try__me" class="bg-warning rounded">
+          TRY ME!
+        </button>
+      </div>
+      <div class="rounded my-2" id="sample__wrapper">
+        <h4>
+          ...and by passing a parameter, you can execute something else for
+          "Cancel"
+        </h4>
+        <button (click)="confirmTwo()" id="try__me" class="bg-dark rounded">TRY ME!</button>
+      </div>
+      <div class="rounded my-2" id="sample__wrapper">
+        <h4>A message with auto close timer set to 2 seconds</h4>
+        <button (click)="checkFour()" id="try__me" class="bg-danger rounded">
+          TRY ME!
+        </button>
+      </div>
+      <div class="rounded my-2" id="sample__wrapper">
+        <h4>Modal window with input field</h4>
+        <button (click)="inputCheck()" id="try__me" class="bg-info rounded">TRY ME!</button>
+      </div>
+      <div class="rounded my-2" id="sample__wrapper">
+        <h4>
+          A warning message, with a function attached to the "Confirm" Button...
+        </h4>
+        <button (click)="confirmTwo()" id="try__me" class="bg-warning rounded">TRY ME!</button>
+      </div>
+    </div>
+  </div>
+  <div class="modal" *ngIf="showConfirmation">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p class="text-center py-3 fw-bold fs-4">Here's a message!</p>
+        <div (click)="close()" class="button__wrapper bg-success rounded">
+          <p>Ok</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" *ngIf="showConfirmationTwo">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p class="text-center fw-bold fs-4">Here's a message!</p>
+        <p class="text-center py-2">It's pretty, isn't it?</p>
+        <div (click)="closeTwo()" class="button__wrapper bg-success rounded">
+          <p>Ok</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" *ngIf="showConfirmationThree">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p class="text-center fw-bold fs-4">HTML example</p>
+        <p class="text-center py-2">
+          You can use bold text, links and other HTML tags
+        </p>
+        <div (click)="closeThree()" class="button__wrapper bg-success rounded">
+          <p>Ok</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" *ngIf="showConfirmationFour">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p class="text-center fw-bold fs-4">HTML example</p>
+        <p class="text-center py-2">
+          You can use bold text, links and other HTML tags
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" *ngIf="successModal">
+    <div class="modal-Content">
+      <div class="modal-Body">
+        <div class="check-Container">
+          <div class="check-Icon">
+            <i id="check" class="pi pi-check"></i>
+          </div>
+        </div>
+        <h2 class="modal-Header">Good Job!</h2>
+        <p class="modal-Message">You clicked the button</p>
+        <button (click)="cancel()" id="try__me" class="bg-success rounded">
+          Okay
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal" *ngIf="warningMessage">
+    <div class="modal-Content">
+      <div class="modal-Body">
+        <div class="check-Container">
+          <i id="warn" class="text-warn ri-error-warning-line"></i>
+        </div>
+        <h2 class="modal-Header">Are you sure?</h2>
+        <p class="modal-Message">You won't be able to revert this!</p>
+        <button (click)="delete()" id="try__me" class="bg-success rounded mx-2">
+          Yes, Delete It!
+        </button>
+        <button (click)="cancelThree()" id="try__me" class="bg-danger rounded">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal" *ngIf="deleteModal">
+    <div class="modal-Content">
+      <div class="modal-Body">
+        <div class="check-Container">
+          <div class="check-Icon">
+            <i id="check" class="pi pi-check"></i>
+          </div>
+        </div>
+        <h2 class="modal-Header">Deleted!</h2>
+        <p class="modal-Message">Your file has been deleted.</p>
+        <button (click)="cancelTwo()" id="try__me" class="bg-success rounded">
+          Okay
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal" *ngIf="inputModal">
+    <div class="modal-Content">
+      <div class="modal-Body">
+        <h2 class="modal-Header">Input Something</h2>
+        <div>
+            <input id="input__details" [(ngModel)]="data" type="text" placeholder="Type here...">
+        </div>
+        <button (click)="saveData()" id="try__me" class="bg-success rounded mx-2">
+          Okay
+        </button>
+        <button (click)="cancelFour()" id="try__me" class="bg-success rounded">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal" *ngIf="inputDetailsModal">
+    <div class="modal-Content">
+      <div class="modal-Body">
+        <div class="check-Container">
+          <div class="check-Icon">
+            <i id="check" class="pi pi-check"></i>
+          </div>
+        </div>
+        <p class=" my-2 px-4">
+            You Entered: {{data}}
+        </p>
+        <button (click)="acceptTwo()" id="try__me" class="bg-success rounded mx-2">
+          Okay
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row footer">
+    <div class="col-lg-6 col-md-6 col-sm-6 contact__wrapper">
+      <a id="contact__link" href="">CREATIVE TIM</a>
+      <a id="contact__link" href="">ABOUT US</a>
+      <a id="contact__link" href="">BLOG</a>
+      <a id="contact__link" href="">LICENSE</a>
+    </div>
+    <h4 class="col-lg-6 col-md-6 col-sm-6">
+      © 2025, made with<i class="icon22 ri-heart-fill"></i>by Creative Tim for a
+      better web.
+    </h4>
+  </div>
+</div>

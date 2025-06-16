@@ -1,0 +1,237 @@
+<div class="section" (click)="showNotificationTwo($event)">
+  <div class="wrapper">
+    <div class="hero__section">
+      <div class="left">
+        <div class="toggleSideBar" (click)="toggleSideBar()">
+          <i
+            id="i"
+            [ngClass]="
+              isOpen ? 'ri-dashboard-horizontal-fill' : 'ri-more-2-fill'
+            "
+          ></i>
+        </div>
+        <div>
+          <span class="h4">Grid System</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="search__wrapper">
+          <div class="input-container">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div>
+            <i id="i" class="ri-search-line"></i>
+          </div>
+        </div>
+        <div>
+          <i id="except" class="ri-dashboard-fill"></i>
+        </div>
+        <div class="notification-wrapper" (click)="showNotification($event)">
+          <i id="except" class="ri-notification-3-fill"></i>
+          <span class="notification-count">5</span>
+        </div>
+        <div class="notification__details" *ngIf="notification">
+          <p class="notification__item">Mike John responded to your email</p>
+          <p class="notification__item">You have 5 new tasks</p>
+          <p class="notification__item">You're now friend with Andrew</p>
+          <p class="notification__item">Another Notification</p>
+          <p class="notification__item">Another One</p>
+        </div>
+        <div>
+          <i id="except" class="ri-user-3-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="m-3">XS Grid <span id="subText">Always Horizontal</span></span>
+  <div class="container my-4">
+    <div class="row my-3">
+      <h4 class="bgColor col mx-lg-3">Col-4</h4>
+      <h4 class="bgColor col mx-lg-3">Col-4</h4>
+      <h4 class="bgColor col mx-lg-3">Col-4</h4>
+    </div>
+    <span class="m-3"
+      >SM Grid <span id="subText">Collapsed at 576px</span></span
+    >
+    <div class="container my-4">
+      <div class="row my-3">
+        <h4 class="bgColor col-sm-3 my-2">col-sm-4</h4>
+        <h4 class="bgColor col-sm-3 my-2">col-sm-4</h4>
+        <h4 class="bgColor col-sm-3 my-2">col-sm-4</h4>
+      </div>
+    </div>
+    <span class="m-3"
+      >MD Grid <span id="subText">Collapsed at 768px</span></span
+    >
+    <div class="container my-4">
+      <div class="row my-3">
+        <h4 class="bgColor col-md-3 my-2">col-md-4</h4>
+        <h4 class="bgColor col-md-3 my-2">col-md-4</h4>
+        <h4 class="bgColor col-md-3 my-2">col-md-4</h4>
+      </div>
+    </div>
+    <span class="m-3"
+      >LG Grid <span id="subText">Collapsed at 992px</span></span
+    >
+    <div class="container my-4">
+      <div class="row my-3">
+        <h4 class="bgColor col-lg-3 my-2">col-lg-4</h4>
+        <h4 class="bgColor col-lg-3 my-2">col-lg-4</h4>
+        <h4 class="bgColor col-lg-3 my-2">col-lg-4</h4>
+      </div>
+    </div>
+    <span class="m-3"
+      >XL Grid <span id="subText">Collapsed at 1200px</span></span
+    >
+    <div class="container my-4">
+      <div class="row my-3">
+        <h4 class="bgColor col-xl-3 my-2">col-xl-4</h4>
+        <h4 class="bgColor col-xl-3 my-2">col-xl-4</h4>
+        <h4 class="bgColor col-xl-3 my-2">col-xl-4</h4>
+      </div>
+    </div>
+    <span class="m-3"
+      >Mixed Grid
+      <span id="subText"
+        >Showing different sizes on different screens</span
+      ></span
+    >
+    <div class="container my-4">
+      <div class="row my-3">
+        <h4 class="bgColor col-sm-3 col-lg-2 my-2">col-sm-6 col-lg-3</h4>
+        <h4 class="bgColor col-sm-3 col-lg-2 my-2">col-sm-6 col-lg-3</h4>
+        <h4 class="bgColor col-sm-3 col-lg-2 my-2">col-sm-6 col-lg-3</h4>
+        <h4 class="bgColor col-sm-3 col-lg-2 my-2">col-sm-6 col-lg-3</h4>
+      </div>
+    </div>
+    <span class="m-3"
+      >Offset Grid <span id="subText">Adding some space when needed</span></span
+    >
+    <div class="container text-center my-4">
+      <div class="row mx-4">
+        <div class="bgColor col-md-3 ml-auto">col-md-3</div>
+        <div class="col-md-2 ml-auto"></div>
+        <div class="col-md-2 ml-auto"></div>
+        <div class="col-md-1 ml-auto"></div>
+        <div class="bgColor col-md-3 ml-auto my-1">col-md-3 ml-auto</div>
+      </div>
+      <div class="row mx-4">
+        <div class="col-6 col-md-2"></div>
+        <div class="bgColorTwo col-md-2 ml-auto my-3">
+          col-md-4 ml-auto mr-auto
+        </div>
+        <div class="col-6 col-md-1"></div>
+        <div class="bgColorTwo col-md-2 ml-auto my-3">
+          col-md-4 ml-auto mr-auto
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2"></div>
+        <div class="bgColor col-md-6 ml-auto mr-auto">
+          col-md-6 ml-auto mr-auto
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section__two">
+    <div class="container">
+      <h4 class="text-center">Paragraph</h4>
+      <div class="row">
+        <div class="py-4 col-lg-6 col-md-4 col-sm-12 px-lg-2">
+          <span class="py-2 fw-bold">Some Title Here</span>
+          <p class="py-2">
+            One morning, when Gregor Samsa woke from troubled dreams, he found
+            himself transformed in his bed into a horrible vermin. He lay on his
+            armour-like back, and if he lifted his head a little he could see
+            his brown belly, slightly domed and divided by arches into stiff
+            sections. The bedding was hardly able to cover it and seemed ready
+            to slide off any moment.
+          </p>
+        </div>
+        <div class="py-4 col-lg-6 col-md-4 col-sm-12 px-lg-2">
+          <span class="py-2 fw-bold">Another Title Here</span>
+          <p class="py-2">
+            One morning, when Gregor Samsa woke from troubled dreams, he found
+            himself transformed in his bed into a horrible vermin. He lay on his
+            armour-like back, and if he lifted his head a little he could see
+            his brown belly, slightly domed and divided by arches into stiff
+            sections. The bedding was hardly able to cover it and seemed ready
+            to slide off any moment.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 px-lg-2">
+          <span class="py-2 fw-bold">Some Title Here</span>
+          <p class="py-2">
+            One morning, when Gregor Samsa woke from troubled dreams, he found
+            himself transformed in his bed into a horrible vermin. He lay on his
+            armour-like back, and if he lifted his head a little he could see
+            his brown belly, slightly domed and divided by arches into stiff
+            sections. The bedding was hardly able to cover it and seemed ready
+            to slide off any moment.
+          </p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 px-lg-2">
+          <span class="py-2 fw-bold">Another Title Here</span>
+          <p class="py-2">
+            One morning, when Gregor Samsa woke from troubled dreams, he found
+            himself transformed in his bed into a horrible vermin. He lay on his
+            armour-like back, and if he lifted his head a little he could see
+            his brown belly, slightly domed and divided by arches into stiff
+            sections. The bedding was hardly able to cover it and seemed ready
+            to slide off any moment.
+          </p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 px-lg-2">
+          <span class="py-2 fw-bold">Another Title Here</span>
+          <p class="py-2">
+            One morning, when Gregor Samsa woke from troubled dreams, he found
+            himself transformed in his bed into a horrible vermin. He lay on his
+            armour-like back, and if he lifted his head a little he could see
+            his brown belly, slightly domed and divided by arches into stiff
+            sections. The bedding was hardly able to cover it and seemed ready
+            to slide off any moment.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="py-4 col-lg-6 col-md-4 col-sm-12 px-lg-2">
+          <span class="py-2 fw-bold">Some Title Here</span>
+          <p class="py-2">
+            One morning, when Gregor Samsa woke from troubled dreams, he found
+            himself transformed in his bed into a horrible vermin. He lay on his
+            armour-like back, and if he lifted his head a little he could see
+            his brown belly, slightly domed and divided by arches into stiff
+            sections. The bedding was hardly able to cover it and seemed ready
+            to slide off any moment.
+          </p>
+        </div>
+        <div class="py-4 col-lg-6 col-md-4 col-sm-12 px-lg-2">
+          <span class="py-2 fw-bold">Another Title Here</span>
+          <p class="py-2">
+            One morning, when Gregor Samsa woke from troubled dreams, he found
+            himself transformed in his bed into a horrible vermin. He lay on his
+            armour-like back, and if he lifted his head a little he could see
+            his brown belly, slightly domed and divided by arches into stiff
+            sections. The bedding was hardly able to cover it and seemed ready
+            to slide off any moment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="row footer">
+    <div class="col-sm-6 contact__wrapper">
+      <a id="contact__link" href="">CREATIVE TIM</a>
+      <a id="contact__link" href="">ABOUT US</a>
+      <a id="contact__link" href="">BLOG</a>
+      <a id="contact__link" href="">LICENSE</a>
+    </div>
+    <span class="col span">
+      © 2025, made with<i class="icon22 ri-heart-line"></i>by Creative Tim for a
+      better web.
+    </span>
+  </div>
+</div>

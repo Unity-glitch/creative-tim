@@ -1,0 +1,90 @@
+<div class="logo__wrapper" (click)="showSettings($event)">
+  <i id="logo__icon" class="ri-settings-3-fill"></i>
+</div>
+
+<div class="modal" *ngIf="settings" (click)="closeSettings()"></div>
+<div class="settings__details" *ngIf="settings">
+  <div class="settings__wrapper">
+    <i class="ri ri-close-fill close__icon" (click)="close()"></i>
+    <div class="sidebar__details">
+      <h6 class="setting__title">SIDEBAR FILTER</h6>
+      <div class="colorsTwo">
+        <div class="purple" (click)="selectBgColor('purple')"></div>
+        <div class="red" (click)="selectBgColor('red')"></div>
+        <div class="black" (click)="selectBgColor('black')"></div>
+        <div class="yellow" (click)="selectBgColor('yellow')"></div>
+        <div class="green" (click)="selectBgColor('green')"></div>
+        <div class="blue" (click)="selectBgColor('blue')"></div>
+      </div>
+    </div>
+    <div class="border__line"></div>
+    <div class="sidebar__details">
+      <h6 class="setting__title">SIDEBAR BACKGROUND</h6>
+      <div class="colors">
+        <div class="blue" (click)="selectColor('blue')"></div>
+        <div class="red" (click)="selectColor('red')"></div>
+        <div class="black" (click)="selectColor('black')"></div>
+      </div>
+    </div>
+    <div class="border__line"></div>
+    <div class="toggle__wrapper">
+      <h6 class="toggle__text">Sidebar Mini</h6>
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          [checked]="true"
+          type="checkbox"
+          id="toggle__color"
+          (change)="toggleSideMenu($event)"
+        />
+      </div>
+    </div>
+    <div class="border__line"></div>
+    <div class="toggle__wrapper">
+      <h6 class="toggle__text">Sidebar Images</h6>
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          [checked]="true"
+          type="checkbox"
+          id="toggle__image"
+          (change)="toggleImage($event)"
+        />
+      </div>
+    </div>
+    <div class="image__wrapper">
+      <h6 class="setting__title">IMAGES</h6>
+      <div class="image__details">
+        <img
+          class="img__bg"
+          src="/assets/sidebar-1.jpg"
+          alt=""
+          (click)="selectImage('/assets/sidebar-1.jpg')"
+        />
+        <img
+          class="img__bg"
+          src="/assets/sidebar-2.jpg"
+          alt=""
+          (click)="selectImage('/assets/sidebar-2.jpg')"
+        />
+        <img
+          class="img__bg"
+          src="/assets/sidebar-3.jpg"
+          alt=""
+          (click)="selectImage('/assets/sidebar-3.jpg')"
+        />
+        <img
+          class="img__bg"
+          src="/assets/sidebar-4.jpg"
+          alt=""
+          (click)="selectImage('/assets/sidebar-4.jpg')"
+        />
+      </div>
+    </div>
+    <div class="button__wrapper">
+      <button class="btn1">DOWNLOAD FREE</button>
+      <button class="btn2">BUY PRO</button>
+      <h6 class="thanks__text">Thank you for 95 shares!</h6>
+    </div>
+  </div>
+</div>

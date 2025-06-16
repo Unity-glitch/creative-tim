@@ -1,0 +1,46 @@
+<div class="border-line"></div>
+<div class="profile__wrapper" *ngFor="let menu of menus">
+  <div class="profie__header" (click)="dropDown(menu)">
+    <div class="image__profile">
+      <img src="/assets/lady.jpg" alt="" />
+    </div>
+    <div class="image__name">
+      <h4>Taina Andrew</h4>
+    </div>
+    <div class="dropdown">
+      <i
+        [ngClass]="
+          menu.expanded ? 'ri-arrow-up-s-fill' : 'ri-arrow-down-s-fill'
+        "
+      ></i>
+    </div>
+  </div>
+</div>
+<div
+  *ngFor="let menu of menus"
+  class="submenu"
+  [@expand]="menu.expanded ? 'expanded' : 'collapsed'"
+>
+  <div class="submenu__container">
+    <div *ngFor="let submenu of menu.submenus">
+      <div class="submenu__wrapper">
+        <span id="text" *ngIf="submenu.firstName && submenu.secondName">
+          {{ submenu.firstName[0] }}{{ submenu.secondName[0] }}
+        </span>
+        <span class="full__name" *ngIf="submenu.firstName && submenu.secondName">
+          {{ submenu.firstName }} {{ submenu.secondName }}
+        </span>
+      </div>
+      <div class="submenu__wrapper">
+        <span *ngIf="submenu.firstName && !submenu.secondName">
+          {{ submenu.firstName[0] }}
+        </span>
+        <span class="full__name" *ngIf="submenu.firstName && !submenu.secondName">
+          {{ submenu.firstName }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="border-line"></div>

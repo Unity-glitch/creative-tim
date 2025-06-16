@@ -1,0 +1,284 @@
+<div class="section" (click)="cancelNotification($event)">
+  <div class="wrapper">
+    <div class="hero__section">
+      <div class="left">
+        <div class="toggleSideBar" (click)="toggleSideBar()">
+          <i
+            id="i"
+            [ngClass]="
+              isOpen ? 'ri-dashboard-horizontal-fill' : 'ri-more-2-fill'
+            "
+          ></i>
+        </div>
+        <div>
+          <span class="h4">Extended Forms</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="search__wrapper">
+          <div class="input-container">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div>
+            <i id="i" class="ri-search-line"></i>
+          </div>
+        </div>
+        <div>
+          <i id="except" class="ri-dashboard-fill"></i>
+        </div>
+        <div class="notification-wrapper" (click)="showNotification($event)">
+          <i id="except" class="ri-notification-3-fill"></i>
+          <span class="notification-count">5</span>
+        </div>
+        <div class="notification__details" *ngIf="notification">
+          <p class="notification__item">Mike John responded to your email</p>
+          <p class="notification__item">You have 5 new tasks</p>
+          <p class="notification__item">You're now friend with Andrew</p>
+          <p class="notification__item">Another Notification</p>
+          <p class="notification__item">Another One</p>
+        </div>
+        <div>
+          <i id="except" class="ri-user-3-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section__wrapper rounded">
+    <div class="section__two__wrapper py-4">
+      <div class="left__two">
+        <p class="fs-6">Datepicker</p>
+        <div class="flex justify-content-center">
+          <p-calendar [(ngModel)]="date"></p-calendar>
+        </div>
+      </div>
+      <div class="right__two">
+        <p class="fs-6">Datepicker Year</p>
+        <div class="flex justify-content-center">
+          <p-calendar
+            [(ngModel)]="date"
+            view="year"
+            dateFormat="yy"
+            inputId="yearpicker"
+          ></p-calendar>
+        </div>
+      </div>
+    </div>
+    <div class="section__three__wrapper py-4">
+      <div class="left__three">
+        <p class="fs-6">Switches</p>
+        <div class="form-check form-switch d-flex">
+          <input class="form-check-input" [checked]="true" type="checkbox" />
+          <span class="span__toggle__text">Toggle is on</span>
+        </div>
+        <div class="form-check form-switch my-3">
+          <input class="form-check-input" [checked]="false" type="checkbox" />
+          <span class="span__toggle__text">Toggle is off</span>
+        </div>
+      </div>
+      <div class="right__three">
+        <p class="fs-6 py-2">Customisable Select</p>
+        <div class="city__wrapper">
+          <div class="">
+            <p-multiSelect
+              [options]="cities"
+              [(ngModel)]="selectedCities"
+              defaultLabel="Select Multiple City"
+              optionLabel="name"
+            ></p-multiSelect>
+          </div>
+          <div class="py-3">
+            <p-multiSelect
+              [options]="citiesTwo"
+              [(ngModel)]="selectedCitiesTwo"
+              defaultLabel="Select a City"
+              optionLabel="name"
+              [selectionLimit]="1"
+            ></p-multiSelect>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section__four__wrapper">
+      <div class="left__four">
+        <p class="fs-6 tag__texts">Tags</p>
+        <p class="tag__texts">Regular Tags</p>
+        <p-chips
+          [(ngModel)]="tags"
+          separator="Enter"
+          placeholder="Enter a new tag"
+          styleClass="no-border"
+        ></p-chips>
+      </div>
+      <div class="four__right">
+        <p class="fs-6 drop__up__down">Dropdown & Dropup</p>
+        <div class="notification-wrapper" (click)="showNotificationTwo()">
+          <div class="notification__details__two" *ngIf="notificationTwo">
+            <p class="notification__item">Mike John responded to your email</p>
+            <p class="notification__item">You have 5 new tasks</p>
+            <p class="notification__item">You're now friend with Andrew</p>
+            <p class="notification__item">Another Notification</p>
+            <p class="notification__item">Another One</p>
+          </div>
+          <div class="drop__down__up">
+            <h3 class="drop__text">DROPDOWN</h3>
+            <div>
+              <i
+                [ngClass]="
+                  changeIcon ? 'ri-arrow-down-s-fill' : 'ri-arrow-up-s-fill'
+                "
+              ></i>
+            </div>
+          </div>
+        </div>
+        <div class="notification-wrapper" (click)="showNotificationThree()">
+          <div class="notification__details__three" *ngIf="notificationThree">
+            <p class="notification__item">Mike John responded to your email</p>
+            <p class="notification__item">You have 5 new tasks</p>
+            <p class="notification__item">You're now friend with Andrew</p>
+            <p class="notification__item">Another Notification</p>
+            <p class="notification__item">Another One</p>
+          </div>
+          <div class="drop__down__up__two">
+            <h3 class="drop__text">DROPUP</h3>
+            <div>
+              <i
+                [ngClass]="
+                  changeIcon ? 'ri-arrow-up-s-fill' : 'ri-arrow-down-s-fill'
+                "
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section__five__wrapper py-4">
+      <div class="five__left">
+        <p class="fs-6">Progress Bars</p>
+        <div class="">
+          <p-progressBar
+            [value]="50"
+            [style]="{ width: '200px' }"
+          ></p-progressBar>
+        </div>
+        <div class="my-3">
+          <p-progressBar
+            mode="indeterminate"
+            [style]="{ height: '6px' }"
+            [style]="{ width: '200px' }"
+          ></p-progressBar>
+        </div>
+        <div class="">
+          <p-progressSpinner
+            [style]="{ width: '200px' }"
+            styleClass="w-2rem h-2rem"
+            strokeWidth="5"
+            fill="var(--surface-ground)"
+            animationDuration=".5s"
+          ></p-progressSpinner>
+        </div>
+      </div>
+      <div class="five__right">
+        <p class="fs-6">Sliders</p>
+        <p-slider [style]="{ width: '200px' }" [(ngModel)]="value"></p-slider>
+        <div class="my-4">
+          <p-slider [(ngModel)]="rangeValues" [range]="true"></p-slider>
+        </div>
+      </div>
+    </div>
+    <div class="section__six__wrapper">
+      <div class="six__left">
+        <p class="fs-6 image__text">Regular Image</p>
+        <div class="image__display">
+          <img
+            class="image__width rounded"
+            [src]="imageUrl || defaultImage"
+            *ngIf="imageUrl || defaultImage"
+          />
+          <label
+            *ngIf="!imageUrl"
+            class="custom-file-upload bg-danger text-white"
+          >
+            <input
+              type="file"
+              (change)="onFileSelected($event)"
+              style="display: none"
+            />
+            SELECT IMAGE
+          </label>
+
+          <div class="btn__wrapper">
+            <button
+              class="bg-danger text-white select__btn"
+              (click)="deleteImage()"
+              *ngIf="imageUrl"
+            >
+              Delete
+            </button>
+            <label *ngIf="imageUrl" class="select__btn bg-danger text-white">
+              <input
+                style="display: none"
+                class=""
+                type="file"
+                (change)="onFileSelected($event)"
+              />
+              Change
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="six__right my-3">
+        <p class="fs-6 image__text__two">Avatar</p>
+        <div class="image__display">
+          <img
+            class="image__width__two"
+            [src]="imageUrlTwo || defaultImageTwo"
+            *ngIf="imageUrlTwo || defaultImageTwo"
+          />
+          <img src="" alt="" />
+          <label
+            *ngIf="!imageUrlTwo"
+            class="custom-file-upload bg-danger text-white"
+          >
+            <input
+              type="file"
+              (change)="onFileSelectedTwo($event)"
+              style="display: none"
+            />
+            ADD PHOTO
+          </label>
+
+          <div class="btn__wrapper">
+            <button
+              class="bg-danger text-white select__btn"
+              (click)="deleteImageTwo()"
+              *ngIf="imageUrlTwo"
+            >
+              Delete
+            </button>
+            <label *ngIf="imageUrlTwo" class="select__btn bg-danger text-white">
+              <input
+                style="display: none"
+                class=""
+                type="file"
+                (change)="onFileSelectedTwo($event)"
+              />
+              Change
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="col-lg-6 col-md-6 col-sm-6 contact__wrapper">
+      <a id="contact__link" href="">CREATIVE TIM</a>
+      <a id="contact__link" href="">ABOUT US</a>
+      <a id="contact__link" href="">BLOG</a>
+      <a id="contact__link" href="">LICENSE</a>
+    </div>
+    <h4 class="col-lg-6 col-md-6 col-sm-6">
+      © 2025, made with<i class="icon22 ri-heart-fill"></i>by Creative Tim for a
+      better web.
+    </h4>
+  </div>
+</div>

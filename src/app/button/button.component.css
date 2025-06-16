@@ -1,0 +1,23 @@
+.section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  gap: 38px;
+  padding: 10px 0px 10px 12px;
+  margin-left: 9px;
+  width: 200px;
+}
+.section:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+}
+@media screen and (max-width: 768px){
+  .section{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: -42px;
+    gap: 40px;
+  }
+}

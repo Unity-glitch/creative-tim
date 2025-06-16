@@ -1,0 +1,293 @@
+<div class="section" (click)="showNotificationTwo($event)">
+  <div class="wrapper">
+    <div class="hero__section">
+      <div class="left">
+        <div class="toggleSideBar" (click)="toggleSideBar()">
+          <i
+            id="i"
+            [ngClass]="
+              isOpen ? 'ri-dashboard-horizontal-fill' : 'ri-more-2-fill'
+            "
+          ></i>
+        </div>
+        <div>
+          <span class="h4">Wizard Form</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="search__wrapper">
+          <div class="input-container">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div>
+            <i id="i" class="ri-search-line"></i>
+          </div>
+        </div>
+        <div>
+          <i id="except" class="ri-dashboard-fill"></i>
+        </div>
+        <div class="notification-wrapper" (click)="showNotification($event)">
+          <i id="except" class="ri-notification-3-fill"></i>
+          <span class="notification-count">5</span>
+        </div>
+        <div class="notification__details" *ngIf="notification">
+          <p class="notification__item">Mike John responded to your email</p>
+          <p class="notification__item">You have 5 new tasks</p>
+          <p class="notification__item">You're now friend with Andrew</p>
+          <p class="notification__item">Another Notification</p>
+          <p class="notification__item">Another One</p>
+        </div>
+        <div>
+          <i id="except" class="ri-user-3-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form [formGroup]="myForm">
+    <div class="section__one__wrapper rounded">
+      <p class="text-center fs-5 py-4">Build Your Profile</p>
+      <p class="text-center fs-6">
+        This information will let us know more about you.
+      </p>
+      <div class="tab__wrapper">
+        <span class="tab__button" [ngClass]="{ active: about }">ABOUT</span>
+        <span class="tab__button" [ngClass]="{ active: account }">ACCOUNT</span>
+        <span class="tab__button" [ngClass]="{ active: address }">ADDRESS</span>
+      </div>
+      <div class="about__wrapper" *ngIf="about">
+        <div class="about__info">
+          <p class="fs-6 text-center">
+            Let's start with the basic information (with validation)
+          </p>
+        </div>
+        <div class="profile__card">
+          <div class="left__profile">
+            <img
+              class="img__profile"
+              *ngIf="imageUrl || defaultImage"
+              [src]="imageUrl || defaultImage"
+              alt=""
+              (click)="selectImage.click()"
+            />
+            <label>
+              <input
+              #selectImage
+                (change)="selectFile($event)"
+                style="display: none"
+                type="file"
+              />
+            </label>
+            <p class="blur__text">CHOOSE PICTURE</p>
+          </div>
+          <div class="right__profile">
+            <div class="user__wrappers">
+              <div class="user__left">
+                <div class="profile__icon">
+                  <span class="material-symbols-outlined"> face </span>
+                </div>
+                <div class="input__field">
+                  <div class="input-container-two">
+                    <div class="input-container">
+                      <input
+                        [formControl]="firstName"
+                        type="text"
+                        id="email"
+                        placeholder=" "
+                        required
+                      />
+                      <label class="blur__text">First name</label>
+                      <div class="underline"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="user__left">
+                <div class="profile__icon">
+                  <span class="material-symbols-outlined">
+                    record_voice_over
+                  </span>
+                </div>
+                <div class="input__field">
+                  <div class="input-container-two">
+                    <div class="input-container">
+                      <input
+                        [formControl]="lastName"
+                        type="text"
+                        id="email"
+                        placeholder=" "
+                        required
+                      />
+                      <label class="blur__text">Last name</label>
+                      <div class="underline"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="email__wrapper">
+          <div>
+            <i class="ri-mail-fill chat__icon"></i>
+          </div>
+          <div class="input__field">
+            <div class="input-container-two">
+              <div class="input-container">
+                <input
+                  type="text"
+                  id="email__required"
+                  placeholder=" "
+                  required
+                  [formControl]="email"
+                />
+                <label class="blur__text">Email (required)</label>
+                <div class="underline"></div>
+              </div>
+            </div>
+            <p class="text-danger px-2">{{ errorText }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="account__wrapper" *ngIf="account">
+        <p class="fs-6 py-2">What are you doing? (Checkboxes)</p>
+        <div class="check__boxes__wrapper">
+          <div
+            class="icon__select"
+            (click)="iconOne.selected = !iconOne.selected"
+          >
+            <i
+              class="ri-pencil-line icon"
+              [ngClass]="{ active: iconOne.selected }"
+            ></i>
+            <p class="checkbox__text">DESIGN</p>
+          </div>
+          <div
+            class="icon__select"
+            (click)="iconTwo.selected = !iconTwo.selected"
+          >
+            <i
+              class="ri-terminal-line icon"
+              [ngClass]="{ active: iconTwo.selected }"
+            ></i>
+            <p class="checkbox__text">CODE</p>
+          </div>
+          <div
+            class="icon__select"
+            (click)="iconThree.selected = !iconThree.selected"
+          >
+            <i
+              class="ri-macbook-line icon"
+              [ngClass]="{ active: iconThree.selected }"
+            ></i>
+            <p class="checkbox__text">DEVELOP</p>
+          </div>
+        </div>
+      </div>
+      <div class="address__wrapper" *ngIf="address">
+        <p class="fs-6">Are you living in a nice area?</p>
+        <div class="address__form">
+          <div class="input__field">
+            <div class="input-container-two">
+              <div class="input-container">
+                <input type="text" id="email" placeholder=" " required />
+                <label class="blur__text">Street Name</label>
+                <div class="underline"></div>
+              </div>
+            </div>
+          </div>
+          <div class="input__field">
+            <div class="input-container-two">
+              <div class="input-container">
+                <input type="text" id="street__no" placeholder=" " required />
+                <label class="blur__text">Street No</label>
+                <div class="underline"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="address__form__two">
+          <div class="input__field">
+            <div class="input-container-two">
+              <div class="input-container">
+                <input type="text" id="city" placeholder=" " required />
+                <label class="blur__text">City</label>
+                <div class="underline"></div>
+              </div>
+            </div>
+          </div>
+          <div class="input__field selected__city" (click)="selectCity()">
+            <div class="input-container-two">
+              <div class="input-container">
+                <input type="text" id="street__no" placeholder=" " required />
+                <label class="d-flex blur__text">Single City </label>
+                <i class="ri-arrow-down-s-fill arrow"></i>
+                <div class="underline"></div>
+              </div>
+            </div>
+          </div>
+          <div class="single__city" *ngIf="dropdownCity">
+            <div class="city__wrapper">
+              <p class="city">London</p>
+              <p class="city">Manchester</p>
+              <p class="city">Birmingham</p>
+              <p class="city">Liverpool</p>
+              <p class="city">Newcastle</p>
+              <p class="city">Nottingham</p>
+              <p class="city">Leicester</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn__wrapper__container">
+        <div class="btn__wrapper__two">
+          <button
+            *ngIf="account && !about && !address"
+            class="previous__btn rounded"
+            (click)="previous()"
+          >
+            PREVIOUS
+          </button>
+          <button
+            *ngIf="address && !account && !about"
+            class="previous__btn rounded"
+            (click)="previousTwo()"
+          >
+            PREVIOUS
+          </button>
+        </div>
+        <div *ngIf="!account" class="btn__wrapper__two"></div>
+        <div class="btn__wrapper">
+          <button
+            *ngIf="about && !account"
+            (click)="next()"
+            class="next__btn bg-danger text-white rounded"
+          >
+            NEXT
+          </button>
+          <button
+            *ngIf="account && !address"
+            (click)="nextTwo()"
+            class="next__btn bg-danger text-white rounded"
+          >
+            NEXT
+          </button>
+        </div>
+        <div class="btn__wrapper" *ngIf="address">
+          <button class="next__btn bg-danger text-white rounded">FINISH</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="row footer">
+    <div class="col-sm-6 contact__wrapper">
+      <a id="contact__link" href="">CREATIVE TIM</a>
+      <a id="contact__link" href="">ABOUT US</a>
+      <a id="contact__link" href="">BLOG</a>
+      <a id="contact__link" href="">LICENSE</a>
+    </div>
+    <span class="col span">
+      ©2025, made with<i class="icon22 ri-heart-line"></i>by Creative Tim for a
+      better web.
+    </span>
+  </div>
+</div>

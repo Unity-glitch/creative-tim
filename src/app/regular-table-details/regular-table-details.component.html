@@ -1,0 +1,243 @@
+<div class="section" (click)="showNotificationTwo($event)">
+  <div class="wrapper">
+    <div class="hero__section">
+      <div class="left">
+        <div class="toggleSideBar" (click)="toggleSideBar()">
+          <i
+            id="i"
+            [ngClass]="
+              isOpen ? 'ri-dashboard-horizontal-fill' : 'ri-more-2-fill'
+            "
+          ></i>
+        </div>
+        <div>
+          <span class="h4">Regular Tables</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="search__wrapper">
+          <div class="input-container">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div>
+            <i id="i" class="ri-search-line"></i>
+          </div>
+        </div>
+        <div>
+          <i id="except" class="ri-dashboard-fill"></i>
+        </div>
+        <div class="notification-wrapper" (click)="showNotification($event)">
+          <i id="except" class="ri-notification-3-fill"></i>
+          <span class="notification-count">5</span>
+        </div>
+        <div class="notification__details" *ngIf="notification">
+          <p class="notification__item">Mike John responded to your email</p>
+          <p class="notification__item">You have 5 new tasks</p>
+          <p class="notification__item">You're now friend with Andrew</p>
+          <p class="notification__item">Another Notification</p>
+          <p class="notification__item">Another One</p>
+        </div>
+        <div>
+          <i id="except" class="ri-user-3-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section__one__wrapper rounded">
+    <div class="top__icon__text">
+      <i
+        class="ri-archive-drawer-fill icon__table bg-danger text-white rounded"
+      ></i>
+      <p class="fs-6">Simple Table</p>
+    </div>
+    <div class="table-responsive">
+      <table class="table purple__text">
+        <thead>
+          <tr class="fw-300">
+            <td class="purple__text" scope="col">Name</td>
+            <td class="purple__text" scope="col">Country</td>
+            <td class="purple__text" scope="col">City</td>
+            <td class="purple__text" scope="col">Salary</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dakota Rice</td>
+            <td>Niger</td>
+            <td>Oud-Turnhout</td>
+            <td class="purple__text">$36,738</td>
+          </tr>
+          <tr>
+            <td>Minerva Hooper</td>
+            <td>Curaçao</td>
+            <td>Sinaai-Waas</td>
+            <td class="purple__text">$23,789</td>
+          </tr>
+          <tr>
+            <td>Sage Rodriguez</td>
+            <td>Netherlands</td>
+            <td>Baileux</td>
+            <td class="purple__text">$56,142</td>
+          </tr>
+          <tr>
+            <td>Philip Chaney</td>
+            <td>South Korea</td>
+            <td>Overland Park</td>
+            <td class="purple__text">$63,542</td>
+          </tr>
+          <tr>
+            <td>Doris Greene</td>
+            <td>Malawi</td>
+            <td>Feldkirchen in Kärnten</td>
+            <td class="purple__text">$38,735</td>
+          </tr>
+          <tr>
+            <td>Mason Porter</td>
+            <td>Chile</td>
+            <td>Gloucester</td>
+            <td class="purple__text">$78,615</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="section__two__wrapper rounded">
+    <div class="top__icon__text">
+      <i
+        class="ri-archive-drawer-fill icon__table bg-danger text-white rounded"
+      ></i>
+      <div class="table__title">
+        <p class="fs-6 py-1">Table on Plain Background</p>
+        <p>Here is a subtitle for this table</p>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table__two">
+        <thead>
+          <tr class="fw-300">
+            <td scope="col">ID</td>
+            <td scope="col">Name</td>
+            <td scope="col">Country</td>
+            <td scope="col">City</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table__row">
+            <td>1</td>
+            <td>Dakota Rice</td>
+            <td>Niger</td>
+            <td>Oud-Turnhout</td>
+          </tr>
+          <tr class="table__row">
+            <td>2</td>
+            <td>Minerva Hooper</td>
+            <td>Curaçao</td>
+            <td>Sinaai-Waas</td>
+          </tr>
+          <tr class="table__row">
+            <td>3</td>
+            <td>Sage Rodriguez</td>
+            <td>Netherlands</td>
+            <td>Baileux</td>
+          </tr>
+          <tr class="table__row">
+            <td>4</td>
+            <td>Philip Chaney</td>
+            <td>South Korea</td>
+            <td>Overland Park</td>
+          </tr>
+          <tr class="table__row">
+            <td>5</td>
+            <td>Doris Greene</td>
+            <td>Malawi</td>
+            <td>Feldkirchen in Kärnten</td>
+          </tr>
+          <tr class="table__row">
+            <td>6</td>
+            <td>Mason Porter</td>
+            <td>Chile</td>
+            <td>Gloucester</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="section__one__wrapper rounded">
+    <div class="top__icon__text">
+      <i
+        class="ri-archive-drawer-fill icon__table bg-danger text-white rounded"
+      ></i>
+      <div class="table__title">
+        <p class="fs-6 py-1">Regular Table with Colors</p>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table__two">
+        <thead>
+          <tr class="fw-300">
+            <td scope="col">ID</td>
+            <td scope="col">Name</td>
+            <td scope="col">Country</td>
+            <td scope="col">City</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table__row bg-success">
+            <td>1</td>
+            <td>Dakota Rice</td>
+            <td>Niger</td>
+            <td>Oud-Turnhout</td>
+          </tr>
+          <tr class="table__row">
+            <td>2</td>
+            <td>Minerva Hooper</td>
+            <td>Curaçao</td>
+            <td>Sinaai-Waas</td>
+          </tr>
+          <tr class="table__row bg-primary text-white">
+            <td>3</td>
+            <td>Sage Rodriguez</td>
+            <td>Netherlands</td>
+            <td>Baileux</td>
+          </tr>
+          <tr class="table__row">
+            <td>4</td>
+            <td>Philip Chaney</td>
+            <td>South Korea</td>
+            <td>Overland Park</td>
+          </tr>
+          <tr class="table__row bg-info text-white">
+            <td>5</td>
+            <td>Doris Greene</td>
+            <td>Malawi</td>
+            <td>Feldkirchen in Kärnten</td>
+          </tr>
+          <tr class="table__row">
+            <td>6</td>
+            <td>Mason Porter</td>
+            <td>Chile</td>
+            <td>Gloucester</td>
+          </tr>
+          <tr class="table__row bg-warning">
+            <td>6</td>
+            <td>Mason Porter</td>
+            <td>Chile</td>
+            <td>Gloucester</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row footer">
+    <div class="col-sm-6 contact__wrapper">
+      <a id="contact__link" href="">CREATIVE TIM</a>
+      <a id="contact__link" href="">ABOUT US</a>
+      <a id="contact__link" href="">BLOG</a>
+      <a id="contact__link" href="">LICENSE</a>
+    </div>
+    <span class="col span">
+      ©2025, made with<i class="icon22 ri-heart-line"> </i>by Creative Tim for a
+      better web.
+    </span>
+  </div>
+</div>

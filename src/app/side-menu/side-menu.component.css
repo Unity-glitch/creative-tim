@@ -1,0 +1,331 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.dashboard__details {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.logoIcon {
+  width: 70px;
+}
+
+.side-menu.open {
+  width: 120px;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  white-space: nowrap;
+}
+.side-menu span {
+  transition: opacity 0.08s ease;
+}
+.app__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  color: white;
+  transition: width 0.08s ease;
+  overflow-y: scroll;
+}
+.app__logo img,
+.app__logo i {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+#db__icon {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#db__icon__widget {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 5px 80px 0px 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+.component__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px 0px 10px;
+  gap: 22px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+.form__text {
+  margin-left: -35px;
+}
+.form__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 220px;
+  gap: 40px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+.table__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  width: 220px;
+  justify-content: space-around;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+.map__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  width: 220px;
+  justify-content: space-around;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+.doc__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  gap: 26px;
+  padding: 5px 45px 0px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+.chart__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 26px;
+  width: 220px;
+  margin-left: 20px;
+  justify-content: left;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+.widget__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 26px;
+  width: 220px;
+  justify-content: left;
+  margin-left: 20px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+.calender__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  gap: 28px;
+  padding: 5px 85px 0px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+.pages__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  margin-left: 20px;
+  gap: 26px;
+  width: 220px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+.general__style{
+  margin-left: 20px;
+}
+.dashboard__wrapper:hover,
+.component__wrapper:hover,
+.form__wrapper:hover,
+.map__wrapper:hover,
+.table__wrapper:hover,
+.doc__wrapper:hover,
+.chart__wrapper:hover,
+.widget__wrapper:hover,
+.calender__wrapper:hover,
+.pages__wrapper:hover {
+  background-color: #f0f0f050;
+  z-index: 1;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.submenu {
+  display: flex;
+  flex-direction: column;
+  margin-top: -10px;
+}
+
+.menu__tab {
+  display: none;
+}
+.menu__toggle {
+  font-size: 35px;
+}
+
+@media screen and (max-width: 820px) {
+  #header {
+    display: none;
+  }
+  #header.show-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    z-index: 500;
+  }
+  .menu__tab {
+    display: block;
+    position: relative;
+  }
+  .menu__toggle {
+    position: absolute;
+    right: 0;
+    margin: 5px 0 0 0;
+    z-index: 1000;
+  }
+  .form__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 59px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+  .table__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+    justify-content: center;
+    column-gap: 59px;
+    width: 100%;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+  .map__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+    justify-content: center;
+    column-gap: 62px;
+    width: 100%;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+  .widget__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 12px auto 0;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+  .chart__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+  .calender__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+  .pages__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+  .doc__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+}

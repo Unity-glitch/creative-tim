@@ -1,0 +1,30 @@
+.section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  cursor: pointer;
+  gap: 40px;
+  padding: 10px 0px 10px 12px;
+  margin-left: 10px;
+  width: 200px;
+}
+.section:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+}
+#h4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+@media screen and (max-width: 768px){
+  .section {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: -28px;
+    gap: 42px;
+  }
+}

@@ -1,0 +1,381 @@
+<div class="section" (click)="showNotificationTwo($event)">
+  <div class="wrapper">
+    <div class="hero__section">
+      <div class="left">
+        <div class="toggleSideBar" (click)="toggleSideBar()">
+          <i
+            id="i"
+            [ngClass]="
+              isOpen ? 'ri-dashboard-horizontal-fill' : 'ri-more-2-fill'
+            "
+          ></i>
+        </div>
+        <div>
+          <span class="h4">Validate Forms</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="search__wrapper">
+          <div class="input-container">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div>
+            <i id="i" class="ri-search-line"></i>
+          </div>
+        </div>
+        <div>
+          <i id="except" class="ri-dashboard-fill"></i>
+        </div>
+        <div class="notification-wrapper" (click)="showNotification($event)">
+          <i id="except" class="ri-notification-3-fill"></i>
+          <span class="notification-count">5</span>
+        </div>
+        <div class="notification__details" *ngIf="notification">
+          <p class="notification__item">Mike John responded to your email</p>
+          <p class="notification__item">You have 5 new tasks</p>
+          <p class="notification__item">You're now friend with Andrew</p>
+          <p class="notification__item">Another Notification</p>
+          <p class="notification__item">Another One</p>
+        </div>
+        <div>
+          <i id="except" class="ri-user-3-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form [formGroup]="myForm">
+    <div class="row section__one__wrapper">
+      <div class="section__one__left rounded">
+        <div class="top__icon__title">
+          <div class="icon__wrapper">
+            <i class="ri-mail-line form__icon bg-danger text-white rounded"></i>
+          </div>
+          <p class="fs-6">Register Form</p>
+        </div>
+        <div class="input__field">
+          <div class="input-container-two">
+            <div class="input__container__two">
+              <input
+                [formControl]="email"
+                type="email"
+                id="email"
+                placeholder=" "
+                required
+              />
+              <p
+                class="error__message"
+                [ngStyle]="{ color: 'red' }"
+                *ngIf="email?.invalid && email?.touched"
+              >
+                Email is <span class="fw-bold error__message">required</span>
+              </p>
+              <label for="email">Email *</label>
+              <div class="underline"></div>
+            </div>
+          </div>
+          <div class="input-container-two">
+            <div class="input__container__two">
+              <input
+                [formControl]="password"
+                type="password"
+                id="email"
+                placeholder=" "
+                required
+              />
+              <p
+                class="error__message"
+                [ngStyle]="{ color: 'red' }"
+                *ngIf="password?.invalid && password?.touched"
+              >
+                Enter a valid password
+              </p>
+              <label for="password">Password *</label>
+              <div class="underline"></div>
+            </div>
+          </div>
+          <div class="input-container-two">
+            <div class="input__container__two">
+              <input
+                [formControl]="confirmPassword"
+                type="password"
+                id="email"
+                placeholder=" "
+                required
+              />
+              <p
+                class="error__message"
+                [ngStyle]="{ color: 'red' }"
+                *ngIf="
+                  confirmPassword?.invalid &&
+                  confirmPassword?.touched &&
+                  passwordCheck
+                "
+              >
+                password does not match
+              </p>
+              <label for="password">Confirm Password *</label>
+              <div class="underline"></div>
+            </div>
+          </div>
+          <p>* Required fields</p>
+        </div>
+        <div class="form__bottom__wrapper">
+          <div id="check__box__two" class="d-flex align-items-center my-4">
+            <input type="checkbox" id="styled-checkbox" />
+            <p class="px-2">Subscribe to newsletter</p>
+          </div>
+          <div>
+            <button class="text-white bg-danger rounded form__register__btn">
+              REGISTER
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="section__one__right rounded">
+        <div class="top__icon__title">
+          <div class="icon__wrapper">
+            <i
+              class="ri-folder-user-line form__icon__two bg-danger text-white rounded"
+            ></i>
+          </div>
+          <p class="fs-6">Login Form</p>
+        </div>
+        <div class="input__field">
+          <div class="input-container-two">
+            <div class="input__container__two">
+              <input
+                [formControl]="emailTwo"
+                type="email"
+                id="email"
+                placeholder=" "
+                required
+              />
+              <p
+                class="error__message"
+                [ngStyle]="{ color: 'red' }"
+                *ngIf="emailTwo?.invalid && emailTwo?.touched"
+              >
+                Email is <span class="fw-bold error__message">required</span>
+              </p>
+              <label for="email">Email *</label>
+              <div class="underline"></div>
+            </div>
+          </div>
+          <div class="input-container-two">
+            <div class="input__container__two">
+              <input
+                [formControl]="passswordTwo"
+                type="password"
+                id="email"
+                placeholder=" "
+                required
+              />
+              <p
+                class="error__message"
+                [ngStyle]="{ color: 'red' }"
+                *ngIf="passswordTwo?.invalid && passswordTwo?.touched"
+              >
+                Enter a valid password
+              </p>
+              <label for="password">Password *</label>
+              <div class="underline"></div>
+            </div>
+          </div>
+        </div>
+        <button class="text-white bg-danger rounded form__login__btn">
+          LOGIN
+        </button>
+      </div>
+    </div>
+    <div class="section__two__wrapper rounded">
+      <p class="fs-6 text-white bg-danger header__text rounded">
+        Type Validation
+      </p>
+      <div class="two__wrapper">
+        <div>
+          <p class="faded__text">Required Text</p>
+        </div>
+        <div class="input__field">
+          <div class="input-container-two">
+            <div class="input__container__two">
+              <input
+                [formControl]="requiredText"
+                type="email"
+                id="email"
+                placeholder=" "
+                required
+              />
+              <p
+                class="error__message"
+                [ngStyle]="{ color: 'red' }"
+                *ngIf="requiredText?.invalid && requiredText?.touched"
+              >
+                required text
+              </p>
+              <div class="underline__two"></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="required__text text-danger rounded">required</p>
+        </div>
+      </div>
+      <div class="two__wrapper">
+        <div>
+          <p class="faded__text">Email</p>
+        </div>
+        <div class="input__field">
+          <div class="input-container-two">
+            <div class="input__container__two">
+              <input
+                [formControl]="emailThree"
+                type="email"
+                id="email"
+                placeholder=" "
+                required
+              />
+              <p
+                class="error__message"
+                [ngStyle]="{ color: 'red' }"
+                *ngIf="emailThree?.invalid && emailThree?.touched"
+              >
+                Email is <span class="fw-bold">required</span>
+              </p>
+              <div class="underline__two"></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="required__text text-danger rounded">email="true"</p>
+        </div>
+      </div>
+      <div class="two__wrapper">
+        <div>
+          <p class="faded__text">Number</p>
+        </div>
+        <div class="input__field">
+          <div class="input-container-two">
+            <div class="input__container__two">
+              <input
+                [formControl]="number"
+                type="email"
+                id="email"
+                placeholder=" "
+                required
+              />
+              <p
+                class="error__message"
+                [ngStyle]="{ color: 'red' }"
+                *ngIf="number?.invalid && number?.touched"
+              >
+                Add a number
+              </p>
+              <div class="underline__two"></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="required__text text-danger rounded">number="true"</p>
+        </div>
+      </div>
+      <div class="two__wrapper">
+        <div>
+          <p class="faded__text">Url</p>
+        </div>
+        <div class="input__field">
+          <div class="input-container-two">
+            <div class="input__container__two">
+              <input
+                [formControl]="url"
+                type="email"
+                id="email"
+                placeholder=" "
+                required
+              />
+              <p
+                class="error__message"
+                [ngStyle]="{ color: 'red' }"
+                *ngIf="url?.invalid && url?.touched"
+              >
+                Must be a valid url
+              </p>
+              <div class="underline__two"></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="required__text text-danger rounded">url="true"</p>
+        </div>
+      </div>
+      <div class="two__wrapper">
+        <div>
+          <p class="faded__text">Equal to</p>
+        </div>
+        <div class="input__field__wrapper">
+          <div class="input__field">
+            <div class="input-container-two">
+              <div class="input__container__two">
+                <input
+                  [formControl]="idSource"
+                  type="text"
+                  id="email__source__des"
+                  placeholder=" "
+                  required
+                />
+                <p
+                  class="error__message"
+                  [ngStyle]="{ color: 'red' }"
+                  *ngIf="idSource?.invalid && idSource?.touched"
+                >
+                  IdSource is required
+                </p>
+                <label for="source">#idSource</label>
+                <div class="underline__two"></div>
+              </div>
+            </div>
+          </div>
+          <div class="input__field mx-2">
+            <div class="input-container-two">
+              <div class="input__container__two">
+                <input
+                  [formControl]="idDestination"
+                  type="text"
+                  id="email__source__des"
+                  placeholder=" "
+                  required
+                />
+                <p
+                  class="error__message"
+                  [ngStyle]="{ color: 'red' }"
+                  *ngIf="idDestination?.invalid && idDestination?.touched"
+                >
+                  IdSource is required
+                </p>
+                <label for="destination">#idDestination</label>
+                <div class="underline__two"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="required__text text-danger rounded">equalTo="#idSource"</p>
+        </div>
+      </div>
+      <button class="text-white bg-danger rounded header__text__two">
+        VALIDATE INPUTS
+      </button>
+    </div>
+  </form>
+  <div class="row footer">
+    <div class="col-sm-6 contact__wrapper">
+      <a id="contact__link" href="">CREATIVE TIM</a>
+      <a id="contact__link" href="">ABOUT US</a>
+      <a id="contact__link" href="">BLOG</a>
+      <a id="contact__link" href="">LICENSE</a>
+    </div>
+    <span class="col span">
+      © 2025, made with<i class="icon22 ri-heart-line"></i>by Creative Tim for a
+      better web.
+    </span>
+  </div>
+</div>

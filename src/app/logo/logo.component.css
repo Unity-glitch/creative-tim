@@ -1,0 +1,29 @@
+.logo__header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logoIcon{
+    width: 70px;
+    margin-left: -75px;
+}
+.logoText{
+    color: white;
+}
+h5{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+    .logoIcon{
+        margin-left: -58px;
+    }
+    .logo__header{
+        display: flex;
+        flex-direction: row;
+        column-gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+}
