@@ -20,7 +20,7 @@ export class ExtendedFormsDetailsComponent implements OnInit {
   defaultImageTwo: string = '/assets/placeholder.jpg';
   imageUrl: string;
   imageFile: File;
-  imageUrlTwo: string ;
+  imageUrlTwo: string;
   imageFileTwo: File;
   rangeValues: number[] = [20, 80];
   changeIcon = false;
